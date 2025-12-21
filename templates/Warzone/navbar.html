@@ -16,38 +16,42 @@
 <body>
 
     <!-- Discount Banner -->
-    <div class="discount-banner">
-        <div class="banner-message">Welcome to ........</div>
-        <div class="banner-message">15% discount on all products</div>
-        <div class="banner-message">Your Summer is Here!</div>
-    </div>
+    
 
     <!-- Header -->
     <header class="header">
-        <div class="logo">
-            <a href="{% url 'store:home' %}">
-                <img src="{% static 'your logo.png' %}" alt="Logo">
+        
+        <div class="icons" style="color: white; display: flex; align-items: center; gap: 24px; position: relative; top: -18px;">
+            <a href="#" id="menuBtn" style="color: white; display: flex; align-items: center; gap: 26px; position: relative; top: -13px;">
+                <i class="fas fa-bars"></i>
+                <span style="font-size: 18px;">Menu</span>
             </a>
         </div>
-        
+
+        <div class="logo">
+            <a href="{% url 'store:home' %}">
+                <img src="{% static 'hotellogo.png' %}" alt="Logo">
+            </a>
+        </div>
         <nav>
             <ul class="navbar" id="navbar">
-                <li><a href="{% url 'store:product' %}">Neon Light</a></li>
-                <li><a href="#">Steel Letter</a></li>
-                <li><a href="#">Stikers</a></li>
-                <li><a href="#">Bags</a></li>
-                <li><a href="#">vehicles</a></li>
-                <li><a href="#">3D Board</a></li>
-                <li><a href="#">Light Board</a></li>
-                <li><a href="#">Scroll Display</a></li>
-                
+                <li class="nav-item">
+                    <a href="tel:+9779812345678" title="Call Us">
+                        <i class="fas fa-phone-alt"></i>
+                    </a>
+                </li>
+        
+                <!-- Vertical divider -->
+                <li class="divider"></li>
+        
+                <li class="nav-item">
+                    <a href="#booking" class="booking-btn">Book Now</a>
+                </li>
             </ul>
         </nav>
-
-        <div class="icons">
-            
-            <a href="#" id="menuBtn"><i class="fas fa-bars"></i></a>
-        </div>
+        
+        
+        
         <div class="drawer" id="drawer">
             <ul>
                 <li><a href="#services">Services</a></li>
@@ -60,11 +64,7 @@
 
         <div class="overlay1" id="overlay"></div>
 
-        <div class="hamburger" id="hamburger">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
+        
     </header>
 
     <!-- Main Content -->
@@ -75,44 +75,71 @@
     </main>
 
     <!-- Footer -->
-    <footer class="footer">
-        <div class="row">
-            <div class="col">
-                <img src="{% static 'your logo.png' %}" alt="Logo" class="footer-logo">
-                <p>sinage for your business</p>
+    <footer class="site-footer">
+        <div class="footer-container">
+      
+          <!-- Newsletter -->
+          <div class="footer-newsletter">
+            <h2>newsletter</h2>
+            <p>
+              Offers, news and destinations to fall in love with.<br>
+              Who we are and what we want to share with you.<br>
+              Sign up.
+            </p>
+      
+            <form class="newsletter-form">
+              <input type="text" placeholder="Name">
+              <input type="email" placeholder="Email address">
+              <button type="submit">Send</button>
+            </form>
+      
+            <label class="privacy">
+              <input type="checkbox">
+              I have read and accept the <a href="#">legal notice</a> and the
+              <a href="#">privacy policy</a>.
+            </label>
+          </div>
+      
+          <!-- Footer Links -->
+          <div class="footer-links">
+      
+            <div>
+              <h4>Contact</h4>
+              <a href="#">Godawari Forest Hotel Projects</a>
+              <a href="#">About Godawari Forest Hotel</a>
+              <a href="#">Join Our Team</a>
             </div>
-            <div class="col">
-                <h4>Office<div class="underline"><span></span></div></h4>
-                <p>Phone: +977-9812345678</p>
-                <p>Email: info@yourlogo.net</p>
-                <p>Kathmandu, Nepal</p>
+      
+            <div>
+              <h4>FAQ's</h4>
+              <a href="#">Godawari Forest Hotel Friends</a>
+              <a href="#">Agencies and Professionals</a>
             </div>
-            <div class="col">
-                <h4>Links<div class="underline"><span></span></div></h4>
-                <p><a href="#">Home</a></p>
-                <p><a href="#">Signs</a></p>
-                <p><a href="#">Services</a></p>
-                <p><a href="#">About</a></p>
+      
+            <div>
+              <h4>Headquarters</h4>
+              <p>+34 911 178 989</p>
+              <p>info@godawariforesthotel.com</p>
             </div>
-            <div class="col">
-                <h4>Newsletter<div class="underline"><span></span></div></h4>
-                <form>
-                    <i class="far fa-envelope"></i>
-                    <input type="email" placeholder="Enter email id" required />
-                    <button type="submit"><i class="fas fa-arrow-right"></i></button>
-                </form>
-                <div class="social-icons">
-                    <i class="fab fa-facebook-f"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-pinterest"></i>
-                </div>
+      
+            <div>
+              <h4>Information & Bookings</h4>
+              <p>Mon–Sun 9 AM to 10 PM CET</p>
+              <p>+34 919 992 690</p>
             </div>
+      
+          </div>
+      
+          <!-- Social -->
+          <div class="footer-social">
+            <a href="#">LinkedIn</a>
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+          </div>
+      
         </div>
-        <hr />
-        <p class="copyright">© Design Maze</p>
-        
-    </footer>
+      </footer>
+      
 
     <script>
   const menuBtn = document.getElementById("menuBtn");
@@ -154,6 +181,42 @@
             navbar.classList.toggle('show');
             this.classList.toggle('active');
         });
+    </script>
+    <script>
+        const header = document.querySelector('.header');
+    
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 0) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        document.addEventListener("DOMContentLoaded", () => {
+            const body = document.body;
+            const header = document.querySelector('header');
+            
+            let lastScroll = 0;
+            
+            window.addEventListener("scroll", () => {
+                const currentScroll = window.pageYOffset;
+        
+                if (currentScroll <= 0) {
+                    body.classList.remove("scroll-up");
+                } else if (currentScroll > lastScroll && !body.classList.contains("scroll-down")) {
+                    if (currentScroll > header.offsetHeight) {
+                        body.classList.remove("scroll-up");
+                        body.classList.add("scroll-down");
+                    }
+                } else if (currentScroll < lastScroll && body.classList.contains("scroll-down")) {
+                    body.classList.remove("scroll-down");
+                    body.classList.add("scroll-up");
+                }
+        
+                lastScroll = currentScroll;
+            });
+        });
+        
     </script>
 </body>
 </html>

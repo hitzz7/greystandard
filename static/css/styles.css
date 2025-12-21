@@ -1982,5 +1982,110 @@ h2{
 
 }
     
+header.active {
+    top: 0; /* Bring the header down to the top of the viewport when active */
+    background-color: rgba(0, 151, 178, 0.8); /* Optional: Change background color when active */
+}
+.scroll-down header {
+    transform: translate3d(0,-200%,0);
+    background-color: #0097b2;
+    
+    
+}
+
+
+
+.scroll-up header {
+    
+    position:fixed;
+    background-color: #0097b2;
+    {% comment %} filter: drop-shadow(0 10px 20px rgb(170, 170, 170)); {% endcomment %}
+   
+}
+.header.scrolled{
+    background-color:white;
+
+}
+
+.header:hover .logo img{
+   
+
+}
+.header:hover .logo img{
+   
+
+}
+
+.header:hover #navbar a{
+    color:white;
+    
+}
+.header:hover #navbar a:hover{
+
+    color:white;
+    
+    
+}
+.header:hover .icons a{
+    
+    
+    color:#402021;
+     /* Strong reddish-brown glow */
+             
+
+}
+.header:hover .icons a:hover{
+    
+    text-shadow: 0 0 5px #5a2a1e,  /* Soft warm brown */
+             0 0 10px #8b4513, /* Medium saddle brown */
+             0 0 20px #733d1a;
+    transition: transform 0.3s ease, color 0.3s ease;
+
+}
+.header.scrolled #navbar a{
+    color:black;
+    
+}
+.header.scrolled #navbar a:hover{
+
+    
+}
+.header.scrolled .icons a{
+    
+    
+    color:black;
+     /* Strong reddish-brown glow */
+             
+
+}
+.header:hover .icons a{
+    
+    
+    color:white;
+     /* Strong reddish-brown glow */
+             
+
+}
+.header:hover .hamburger div{
+    
+    
+    background-color:#402021;
+     /* Strong reddish-brown glow */
+             
+}
+
+header.scrolled .hamburger div {
+    background-color: #402021; /* Change the background color when scrolled */
+    /* Optional: change the glow */
+}
+.header.scrolled .icons a:hover{
+    
+    text-shadow: 0 0 5px #5a2a1e,  /* Soft warm brown */
+             0 0 10px #8b4513, /* Medium saddle brown */
+             0 0 20px #733d1a;
+    transition: transform 0.3s ease, color 0.3s ease;
+
+}
+
 
 

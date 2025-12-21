@@ -1,7 +1,7 @@
 .bg-image {
     position: relative;
     width: 100vw;
-    height: 90vh; /* Full viewport height */
+    height: 100vh; /* Full viewport height */
     overflow: hidden;
     display: flex;
     align-items: center;
@@ -43,31 +43,38 @@
     transition: transform 0.3s ease; /* Center the image */
 }
 .button {
-    background-color: #72c100; /* Soft Baskin Robbins pink */
-    color: white;
-    border: none;
-    margin:5px;
-    padding: 18px 158px;
-    font-size: 26px;
-    font-family: "Helvetica",sans-serif;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    letter-spacing: 0.5px;
+  padding: 14px 48px 14px 28px; /* extra right padding for the arrow */
+  background: transparent;
+  color: black;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 3  00;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
 }
 
-.button:hover {
-    background-color: #9ffd32;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+.button::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 448 512' width='18' height='18' fill='white' xmlns='http://www.w3.org/2000/svg'><path d='M438.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-168 168c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L338.7 288H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h306.7L225.4 110.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l168 168z'/></svg>");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
 }
 
-.button:active {
-    transform: scale(0.97);
-    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
-}
+
 
 .about-box {
         display: flex;
@@ -142,60 +149,169 @@
         
     }
     .text-overlay {
-    position: absolute;
-    text-align: center;
-    margin-left:700px;
-    color: #F0EAD2;
-    
-    z-index: 20; /* Ensure it's above the image */
-    max-width: 80%;
-    
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow to enhance readability */
+        position: absolute;
+        top: 65%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        color: #F0EAD2;
+
+        z-index: 20; /* Ensure it's above the image */
+        width: 100vw;
+        max-width: 100vw;
+        min-width: 0;
+
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Add a subtle shadow to enhance readability */
+    }
+
+    .text-overlay h1 {
+        font-size: 120px;
+        color: white;
+        font-family: 'delmon', sans-serif;
+        white-space: nowrap; /* Prevent breaking into multiple lines */
+        width: 100%;
+        display: inline-block;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+    .google-review {
+        font-size: 18px;
+        color: #555;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .google-review .stars i {
+        color: green; /* Google star yellow */
+        margin-right: 2px;
+        font-size: 20px;
+    }
+
+    .rating-text {
+        font-weight: 600;
+        color: white;
+    }
+
+    .sales-label {
+        margin-top: 12px;
+        font-weight: 600;
+        font-size: 16px;
+        color: white; /* teal-ish */
+    }
+
+    .text-overlay p {
+        font-size: 40px;
+        margin-top: -20px;
+        margin-bottom: 5px;
+        color: white;
+        font-weight: bold;
+        font-family: 'delmon', sans-serif;
+    }
+
+    /* Booking Form Container */
+.hotel-booking-form {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 20px 25px;
+  background: rgba(200, 200, 200, 0.35); /* Slightly gray + more transparent */
+  
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+  display: flex;
+  gap: 16px;
+  align-items: flex-end;
+  flex-wrap: wrap;
+  backdrop-filter: blur(3px); /* Adds a blurring effect */
+  -webkit-backdrop-filter: blur(3px); /* For Safari compatibility */
 }
 
-.text-overlay h1 {
-    font-size: 58px;
-    margin:-10px 0;
-    
-    color:white;
-    font-family: 'stencil', sans-serif;
-}
-.google-review {
- 
-  font-size: 18px;
-  color: #555;
+/* Form Row */
+.form-row {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  flex: 1;
+  min-width: 180px;
+  position: relative; /* Needed for dropdown arrow positioning */
+}
+
+/* Labels */
+.form-row label {
+  font-size: 14px;
+  
+  margin-bottom: 6px;
+  color: #f2f2f2; /* lighter white label for dark bg */
+}
+
+/* Select Inputs */
+.form-row select {
+  padding: 12px 36px 8px 0; /* add right padding for arrow */
+  border: none;
+  border-bottom: 1px solid #f2f2f2; /* lighter white underline */
+  border-radius: 0;
+  font-size: 15px;
+  background: transparent;
+  color: #fff; /* white text */
+  cursor: pointer;
+  transition: border-color 0.3s, box-shadow 0.3s, color 0.3s;
+  appearance: none;
+  -webkit-appearance: none;
+  position: relative;
+  /* fa-solid fa-angle-down SVG: <svg viewBox="0 0 320 512" width="18" height="18" fill="white"><path d="M137.4 374.6c12.5 12.5 32.75 12.5 45.25 0l128-128c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0L160 306.8 54.63 201.4C42.13 188.9 21.88 188.9 9.375 201.4s-12.5 32.75 0 45.25l128 128z"></path></svg> */
+  background-image: url("data:image/svg+xml;utf8,<svg width='18' height='18' viewBox='0 0 320 512' fill='white' xmlns='http://www.w3.org/2000/svg'><path d='M137.4 374.6c12.5 12.5 32.75 12.5 45.25 0l128-128c12.5-12.5 12.5-32.75 0-45.25s-32.75-12.5-45.25 0L160 306.8 54.63 201.4C42.13 188.9 21.88 188.9 9.375 201.4s-12.5 32.75 0 45.25l128 128z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 9px center;
+  background-size: 18px 18px;
+}
+
+.form-row select:focus {
+  outline: none;
+  border-bottom: 2.5px solid #bcd9fd; /* lighter blue for focus underline */
+  background: transparent;
+  color: #fff;
+  box-shadow: none;
+}
+
+/* Style placeholder option if needed */
+.form-row select option[disabled][selected] {
+  color: #ccc;
+}
+
+/* Book Button */
+.booking-btn {
+  padding: 14px 48px 14px 28px; /* extra right padding for the arrow */
+  background: transparent;
+  color: white;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: 3  00;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  position: relative;
+  display: inline-flex;
   align-items: center;
   gap: 8px;
 }
 
-.google-review .stars i {
-  color: green; /* Google star yellow */
-  margin-right: 2px;
-  font-size: 20px;
+.booking-btn::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 448 512' width='18' height='18' fill='white' xmlns='http://www.w3.org/2000/svg'><path d='M438.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-168 168c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L338.7 288H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h306.7L225.4 110.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l168 168z'/></svg>");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
 }
 
-.rating-text {
-  font-weight: 600;
-  color: white;
-}
 
-.sales-label {
-  margin-top: 12px;
-  font-weight: 600;
-  font-size: 16px;
-  color: white; /* teal-ish */
-}
 
-.text-overlay p {
-    font-size: 40px;
-    margin-top: -20px;
-    margin-bottom: 5px;
-    color:white;
-    font-weight:bold;
-    font-family: 'typo', sans-serif;
-}
 .brands-section {
     text-align: center;
     margin-top: 100px;
@@ -320,10 +436,10 @@
     transform: translate(-50%, -50%);
     
     color: #fff;
-    font-size: 27px;
+    font-size: 30px;
     font-weight: bold;
     text-align: center;
-    font-family: "typo",sans-serif;
+    font-family: "Delmon",sans-serif;
     z-index: 2;
     padding: 0 10px;
     white-space: nowrap;
@@ -389,6 +505,7 @@
   .feature h3 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
+    font-family: "Delmon",sans-serif;
   }
   
   .feature p {
@@ -554,10 +671,11 @@
 }
 
 .card-title {
-  font-size: 16px;
+  font-size: 20px;
   color: #333;
-  font-weight: 500;
+  font-weight: 600;
   margin-top: 12px;
+  font-family: "Delmon",sans-serif;
 }
 
 /* Responsive Layout */
@@ -634,3 +752,310 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
   object-fit: contain;
 }
+
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  background: #111;
+  padding: 12px 0;
+}
+
+.marquee {
+  white-space: nowrap;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  animation: moveLeft 15s linear infinite;
+}
+
+@keyframes moveLeft {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
+.center-section {
+  position: relative;
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff;
+  overflow: hidden;
+  padding: 40px 20px;
+}
+
+/* Center content */
+.center-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 700px;
+}
+
+.center-content h1 {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  color: #1a1a1a;
+font-family: 'Delmon', sans-serif;
+}
+
+.center-content h2 {
+  font-size: 20px;
+  font-weight: 400;
+  color: #555;
+  margin-bottom: 30px;
+  font-family: 'Delmon', sans-serif;
+}
+/** Centered content .booking-btn but black */
+.center-content .booking-btn {
+  background: transparent;
+  color: #000;
+  
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 15px 44px 15px 30px;
+  border-radius: 10px;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  position: relative;
+  margin-top: 12px;
+}
+
+.center-content .booking-btn::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 448 512' width='18' height='18' fill='black' xmlns='http://www.w3.org/2000/svg'><path d='M438.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-168 168c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L338.7 288H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h306.7L225.4 110.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l168 168z'/></svg>");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+}
+
+.center-content .booking-btn:hover,
+.center-content .booking-btn:focus {
+  background: transparent;
+  color: #222;
+  transform: translateY(-2px) scale(1.016);
+}
+
+/* CTA */
+.cta-btn {
+  display: inline-block;
+  padding: 14px 36px;
+  background: #000;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 30px;
+  transition: 0.3s ease;
+}
+
+.cta-btn:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+/* Monstera plants */
+.plant-img {
+  position: absolute;
+  bottom: 0;
+  width: 440px;
+  max-width: 45vw;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Left plant */
+.left-plant {
+  left: -40px;
+}
+
+/* Right plant */
+.right-plant {
+  right: -40px;
+  transform: scaleX(-1); /* mirror image */
+}
+
+.about-section {
+  width: 100%;
+  background: #fff;
+}
+
+/* Image wrapper with side margin */
+.about-image-wrapper {
+  position: relative;
+  height: 600px;
+  margin: 0 30px;   /* LEFT & RIGHT SPACE */
+  overflow: hidden;
+  border-radius: 0px;
+}
+
+/* Image */
+.about-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* About Us text on top of image */
+.about-label {
+  position: absolute;
+  top: 30px;
+  left: 40px;
+  font-size: 14px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #fff;
+  z-index: 2;
+}
+.about-label2 {
+  position: absolute;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  font-size: 34px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: 'Delmon', sans-serif;
+  color: #fff;
+  z-index: 2;
+  text-align: center;
+}
+.about-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+  padding: 0 20px;
+}
+.about-overlay h3 {
+  font-size: 38px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+
+/* Content below image */
+.about-content {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.about-content h3 {
+  font-size: 34px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  font-family: 'Delmon', sans-serif;
+  color: #111;
+}
+
+.about-content p {
+  font-size: 19px;
+  line-height: 1.7;
+  color: #555;
+  font-family: 'Delmon', sans-serif;
+  margin-bottom: 18px;
+}
+
+/* Button */
+.about-btn {
+  background: transparent;
+  color: #000;
+  border: none;
+  font-size: 18px;
+  font-weight: 600;
+  padding: 15px 44px 15px 30px;
+  border-radius: 10px;
+  transition: background 0.3s, color 0.3s, transform 0.2s;
+  position: relative;
+  margin-top: 12px;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.about-btn::after {
+  content: '';
+  display: inline-block;
+  position: absolute;
+  right: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  background-image: url("data:image/svg+xml;utf8,<svg viewBox='0 0 448 512' width='18' height='18' fill='black' xmlns='http://www.w3.org/2000/svg'><path d='M438.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-168 168c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L338.7 288H32c-17.7 0-32-14.3-32-32s14.3-32 32-32h306.7L225.4 110.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l168 168z'/></svg>");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  pointer-events: none;
+}
+
+.about-btn:hover,
+.about-btn:focus {
+  background: transparent;
+  color: #222;
+  transform: translateY(-2px) scale(1.016);
+}
+
+@media (max-width: 768px) {
+  .about-image-wrapper {
+      height: 380px;
+      margin: 0 20px;
+      border-radius: 14px;
+  }
+
+  .about-label {
+      left: 20px;
+      top: 20px;
+  }
+
+  .about-content h3 {
+      font-size: 26px;
+  }
+}
+.about-image-wrapper::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,0,0,0.35), transparent);
+}
+
+.sliding-text-section {
+  width: 100%;
+  overflow: hidden;
+  background: #fff; /* change if needed */
+  padding: 40px 0;
+}
+
+.sliding-text {
+  white-space: nowrap;
+  font-size: 150px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: black; /* subtle luxury look */
+  animation: slideLeft 25s linear infinite;
+}
+
+@keyframes slideLeft {
+  0% {
+      transform: translateX(100%);
+  }
+  100% {
+      transform: translateX(-100%);
+  }
+}
+
