@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-*bd^&(4x&sx^%&xpa@k$$f^uq5nx)i3caue@j=18f7b9)mq&af
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.1.73','godawarihotel.hitzz.co']
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost', '192.168.1.73','greystandardktm.com','www.greystandardktm.com']
 
 
 
@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django.contrib.sitemaps',
     'store',
 ]
 
@@ -128,13 +129,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # settings.py
 
-EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_PORT = 587
-EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'najus777@gmail.com'  # Your Gmail email address
-EMAIL_HOST_PASSWORD = 'ugck woat fali zlke'  # Gmail App Password (not your Gmail password)
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
 
 
 # Default primary key field type

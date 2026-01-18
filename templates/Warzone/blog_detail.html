@@ -1,0 +1,192 @@
+{% extends './navbar.html' %}
+{% load static %}
+
+{% block title %}{{ blog.title }} | Pet & Dog Grooming Blog - Grey Standard Kathmandu{% endblock %}
+
+{% block meta_description %}{{ blog.content|truncatewords:30|striptags }}{% endblock %}
+
+{% block meta_keywords %}pet grooming blog, dog grooming kathmandu, pet care blog, pet grooming tips, dog grooming advice, pet blog nepal, {{ blog.title|lower }}{% endblock %}
+
+{% block canonical_url %}https://www.greystandardktm.com{% url 'store:blog_detail' blog.slug %}{% endblock %}
+
+{% block og_meta_tags %}
+<meta property="og:type" content="article" />
+<meta property="og:title" content="{{ blog.title }} | Grey Standard Pet Grooming Blog" />
+<meta property="og:description" content="{{ blog.content|truncatewords:30|striptags }}" />
+<meta property="og:url" content="https://www.greystandardktm.com{% url 'store:blog_detail' blog.slug %}" />
+<meta property="og:image" content="https://www.greystandardktm.com{{ blog.image.url }}" />
+<meta property="og:site_name" content="Grey Standard Pet Grooming" />
+<meta property="article:published_time" content="{{ blog.created_at|date:'c' }}" />
+<meta property="article:author" content="Grey Standard Pet Grooming" />
+<meta property="article:section" content="Pet Grooming Blog" />
+{% endblock %}
+
+{% block twitter_meta_tags %}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="{{ blog.title }} | Grey Standard Pet Grooming Blog" />
+<meta name="twitter:description" content="{{ blog.content|truncatewords:30|striptags }}" />
+<meta name="twitter:image" content="https://www.greystandardktm.com{{ blog.image.url }}" />
+<meta name="twitter:site" content="@greystandardktm" />
+{% endblock %}
+
+{% block extra_meta %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ blog.title|escapejs }}",
+  "image": "https://www.greystandardktm.com{{ blog.image.url }}",
+  "datePublished": "{{ blog.created_at|date:'c' }}",
+  "dateModified": "{{ blog.created_at|date:'c' }}",
+  "author": {
+    "@type": "Organization",
+    "name": "Grey Standard Pet Grooming",
+    "url": "https://www.greystandardktm.com"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Grey Standard Pet Grooming",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://www.greystandardktm.com{% static 'grey1.png' %}"
+    }
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://www.greystandardktm.com{% url 'store:blog_detail' blog.slug %}"
+  },
+  "articleBody": "{{ blog.content|striptags|truncatewords:500|escapejs }}",
+  "description": "{{ blog.content|truncatewords:30|striptags|escapejs }}",
+  "keywords": "pet grooming blog, dog grooming kathmandu, pet care blog, pet grooming tips, dog grooming advice, pet blog nepal"
+}
+</script>
+{% endblock %}
+
+{% block content %}
+<style>
+  body {
+    background: #fff;
+  }
+  .blog-header-row {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 120px auto 24px auto;
+    max-width: 1050px;
+    width: 100%;
+    gap: 0.2em;
+    padding: 0 18px;
+  }
+  .blog-detail-title {
+    font-size: 102px;
+    font-weight: bold;
+    margin: 0;
+    color: #000;
+    font-family: 'delmon', sans-serif;
+    letter-spacing: -1.6px;
+    text-align: left;
+    line-height: 1.08;
+  }
+  .blog-detail-meta {
+    color: #8686ab;
+    font-size: 52px;
+    font-style: italic;
+    margin-top: 0.13em;
+    margin-bottom: 0.04em;
+    text-align: left;
+    line-height: 1.1;
+    font-family: 'delmon', sans-serif;
+  }
+  .blog-detail-image-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 38px;
+    margin-top: 8px;
+    padding: 0;
+  }
+  .blog-detail-image {
+    width: 100%;
+    max-width: 800px;
+    max-height: 600px;
+    height: 600px;
+    object-fit: cover;
+    border-radius: 32px;
+    box-shadow: 0 7px 30px rgba(90,65,180,0.17);
+    background: #eceafd;
+    border: 3px solid #f2ecfc;
+    transition: transform 0.21s cubic-bezier(.48,0,.24,1);
+  }
+  .blog-detail-image:hover {
+    transform: scale(1.022) rotate(-1.4deg);
+    box-shadow: 0 16px 44px rgba(72,62,130,0.20);
+  }
+  .blog-detail-content {
+    font-size: 1.5em;
+    line-height: 1.82;
+    color: #222247;
+    margin: 22px auto 34px auto;
+    max-width: 800px;
+    text-align: left;
+    white-space: pre-line;
+    font-family: 'delmon', sans-serif;
+    padding: 0 18px;
+  }
+  .blog-detail-back {
+    margin: 0 auto 64px auto;
+    display: block;
+    width: max-content;
+    padding: 10px 24px;
+    background: linear-gradient(92deg, #6d59d5,#ce8bfa 78%);
+    color: #fff;
+    border-radius: 12px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1.12em;
+    box-shadow: 0 2px 14px rgba(100,72,170,0.11);
+    transition: background 0.15s, transform 0.15s;
+  }
+  .blog-detail-back:hover {
+    background: linear-gradient(92deg, #7f62d6,#b496f5 78%);
+    transform: translateY(-2px) scale(1.07);
+    color: #fff;
+    text-decoration: none;
+  }
+  @media (max-width: 1050px) {
+    .blog-detail-title,
+    .blog-detail-meta {
+      font-size: 42px;
+    }
+    .blog-detail-image {
+      max-height: 370px;
+      height: 370px;
+    }
+    .blog-header-row {
+      margin-top: 120px;
+    }
+  }
+  @media (max-width: 600px) {
+    .blog-detail-title,
+    .blog-detail-meta {
+      font-size: 26px;
+    }
+    .blog-detail-image {
+      max-height: 380px;
+      height: 280px;
+      border-radius: 12px;
+    }
+    .blog-header-row {
+      margin-top: 128px;
+    }
+  }
+</style>
+<div class="blog-header-row">
+  <h1 class="blog-detail-title">{{ blog.title }}</h1>
+  <div class="blog-detail-meta">{{ blog.created_at|date:"F d, Y" }}</div>
+</div>
+<div class="blog-detail-image-wrapper">
+  <img src="{{ blog.image.url }}" alt="{{ blog.title }} - Pet & Dog Grooming Blog by Grey Standard Kathmandu" class="blog-detail-image" />
+</div>
+<div class="blog-detail-content">{{ blog.content|linebreaksbr }}</div>
+<a href="{% url 'store:blog_list' %}" class="blog-detail-back">← Back to Blog</a>
+{% endblock %}

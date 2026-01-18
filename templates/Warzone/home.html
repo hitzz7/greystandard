@@ -1,375 +1,408 @@
 {% extends './navbar.html' %}
 {% load static %}
 
-{% block title %}Baskin Robbins{% endblock %}
+{% block title %}Pet & Dog Grooming in Kathmandu | Grey Standard - Best Pet Salon Nepal{% endblock %}
 
 {% block content %}
 <div class="bg-image">
-    
-        <img src="{% static 'pool.jpg' %}" alt="Pool" fetchpriority="high" loading="eager" decoding="async">
-        
-    
-    <div class="text-overlay">
-        <div class="google-review">
-            
-            
-            
-        </div>
-        <h1>Godawari Forest Hotel</h1>
-        <p>Your goto Escape Destination</p>
-        <form class="hotel-booking-form" id="bookingForm">
-            <div class="form-row">
-                <label for="roomType">Room</label>
-                <select id="roomType" name="roomType" required>
-                    <option value="" disabled selected>Select Room</option>
-                    <option value="deluxe">Deluxe Room</option>
-                    <option value="suite">Suite</option>
-                    <option value="family">Family Room</option>
-                    <option value="standard">Standard Room</option>
-                </select>
-            </div>
-            <div class="form-row">
-                <label for="adults">Adults</label>
-                <select id="adults" name="adults" required>
-                    <option value="" disabled selected>Adults</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5</option>
-                </select>
-            </div>
-            <div class="form-row">
-              <label for="adults">calender</label>
-              <select id="adults" name="adults" required>
-                  <option value="" disabled selected>Date</option>
-                  <option value="1">1</option>
-                  <option value="2">2</option>
-                  <option value="3">3</option>
-                  <option value="4">4</option>
-                  <option value="5">5</option>
-              </select>
-          </div>
-            <button class="booking-btn">Book Now</button>
-        
+  <img 
+    src="{% static 'GreyStandard.jpeg' %}" 
+    alt="Pet and Dog Grooming in Kathmandu - Grey Standard Pet Salon Nepal"
+    fetchpriority="high"
+    loading="eager"
+    decoding="async"
+    id="responsive-banner-image"
+    class="responsive-banner-image"
+  >
+  
 
-        
-        
+  <div class="text-overlay">
+    <h1 class="visually-hidden">
+      Pet & Dog Grooming in Kathmandu | Professional Pet Care Services
+    </h1>
+    <!-- Social media row moved to bottom right of the bg-image -->
+    <div class="social-media-row-fixed" aria-label="Connect with us on social media">
+      <a 
+        href="https://www.instagram.com/greystandard/" 
+        target="_blank" 
+        rel="noopener nofollow" 
+        title="Follow Grey Standard on Instagram" 
+        aria-label="Instagram - Grey Standard Pet Grooming Kathmandu"
+        >
+        <img src="{% static 'instagram.png' %}" class="social-icon-img" alt="Grey Standard Instagram - Pet Grooming Kathmandu">
+        <span class="visually-hidden">Instagram</span>
+      </a>
+      <a 
+        href="https://www.tiktok.com/@grey13793?_t=ZS-8zQBVR09niC&_r=1&fbclid=PAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGndRDF4mewbZ5OUyHO-JdQH5x9D3CRUR_tinMV1506RK_jcrkVusjAx30K7qA&brid=y1GPPj8k7o8yuDoA6lgdGQ" 
+        target="_blank" 
+        rel="noopener nofollow" 
+        title="Follow Grey Standard on TikTok"
+        aria-label="TikTok - Grey Standard Pet Grooming Kathmandu"
+        >
+        <img src="{% static 'tik-tok.png' %}" class="social-icon-img" alt="Grey Standard TikTok - Dog Grooming Nepal">
+        <span class="visually-hidden">TikTok</span>
+      </a>
+      <a 
+        href="https://wa.me/9779705428705" 
+        target="_blank" 
+        rel="noopener nofollow" 
+        title="Chat with Grey Standard on WhatsApp"
+        aria-label="WhatsApp - Pet Salon Kathmandu"
+        >
+        <img src="{% static 'whats.png' %}" class="social-icon-img" alt="Grey Standard WhatsApp - Contact Pet Groomer Kathmandu">
+        <span class="visually-hidden">WhatsApp</span>
+      </a>
     </div>
-    
-    
-
-    
-   
+  </div>
 </div>
 
-
-    <div class="marquee-wrapper">
-      <div class="marquee">
-          Best price guaranteed • Last rooms available • Late check-out until 13:00 (Subject to availability) • Exclusive offers • Best price guaranteed • Last rooms available • Late check-out until 13:00 (Subject to availability)
-      </div>
-  </div>
-  
-
-  <section class="center-section">
-    <!-- Monstera Images -->
-    <img src="{% static 'mon1.jpg' %}" alt="Monstera Plant" class="plant-img left-plant" loading="lazy" decoding="async">
-    <img src="{% static 'mon1.jpg' %}" alt="Monstera Plant" class="plant-img right-plant" loading="lazy" decoding="async">
-
-    <div class="center-content">
-        <h1>Book Your Stay With Confidence</h1>
-        <h1>Enjoy Luxury Accommodation</h1>
-        
-        <h2>Best price guaranteed • Exclusive offers • Comfort assured</h2>
-        <a href="#booking" class="booking-btn">View Rooms</a>
-    </div>
+<section class="social-media-section">
+  <div class="social-media-section-empty" style="margin-top: 30px;"></div>
 </section>
 
-
-<section class="signs-section">
-    <h2 class="section-heading">Rooms Available</h2>
-
-    <div class="carousel-container">
-        <button class="carousel-btn prev" id="prevBtn">&#10094;</button>
-
-        <div class="carousel-track" id="carouselTrack">
-            <!-- Cards will be dynamically inserted here -->
-        </div>
-
-        <button class="carousel-btn next" id="nextBtn">&#10095;</button>
-    </div>
-</section>
-<script>
-    // Array of room images and titles
-    const roomData = [
-        {src: "{% static 'r1.jpg' %}", title: "Master Room"},
-        {src: "{% static 'r2.jpg' %}", title: "Suits"},
-        {src: "{% static 'r3.jpg' %}", title: "Delux Room"},
-        {src: "{% static 'r4.jpg' %}", title: "Standard Room"},
-        // You can add more images/titles here if available
-    ];
-
-    // How many cards do you want to show in total? (can exceed roomData.length for more shuffling)
-    const numCards = 7;
-    // Shuffle utility (Fisher-Yates)
-    function shuffle(array) {
-        let a = array.slice();
-        for (let i = a.length - 1; i > 0; i--) {
-            const j = Math.floor(Math.random() * (i + 1));
-            [a[i], a[j]] = [a[j], a[i]];
-        }
-        return a;
-    }
-
-    function getRandomCards(data, n) {
-        let cards = [];
-        let roomCount = data.length;
-        let rounds = Math.ceil(n / roomCount);
-        let arr = [];
-        for (let i = 0; i < rounds; i++) {
-            arr = arr.concat(shuffle(data));
-        }
-        return arr.slice(0, n);
-    }
-
-    document.addEventListener('DOMContentLoaded', function() {
-        const carouselTrack = document.getElementById('carouselTrack');
-        const randomRooms = getRandomCards(roomData, numCards);
-
-        randomRooms.forEach(room => {
-            const cardDiv = document.createElement('div');
-            cardDiv.className = 'card';
-            cardDiv.innerHTML = `
-                <img src="${room.src}" loading="lazy" decoding="async" alt="${room.title}">
-                <div class="overlay">${room.title}</div>
-            `;
-            carouselTrack.appendChild(cardDiv);
-        });
-    });
-</script>
-<section class="features-section">
-    <div class="feature">
-      <img src="{% static 'sun.png' %}"  loading="lazy" decoding="async" alt="Swimming Pool">
-      <div class="text">
-        <h3>Swimming Pool</h3>
-        <p>Relax and unwind in our luxurious swimming pool, perfect for leisure and exercise.</p>
-      </div>
-    </div>
-  
-    <div class="feature">
-      <img src="{% static 'cocktail.png' %}" loading="lazy" decoding="async" alt="Bar">
-      <div class="text">
-        <h3>Bar</h3>
-        <p>Enjoy refreshing cocktails and a wide selection of drinks at our vibrant bar.</p>
-      </div>
-    </div>
-  
-    <div class="feature">
-      <img src="{% static 'muscle.png' %}" loading="lazy" decoding="async" alt="Gym">
-      <div class="text">
-        <h3>Gym</h3>
-        <p>Stay fit during your stay with access to our fully equipped modern gym.</p>
-      </div>
-    </div>
-  
-    <div class="feature">
-      <img src="{% static 'treatment.png' %}" loading="lazy" decoding="async" alt="Massage">
-      <div class="text">
-        <h3>Massage</h3>
-        <p>Indulge in soothing massages by our expert therapists for a truly relaxing experience.</p>
-      </div>
-    </div>
-  </section>
-
-
-
-
-    
-
-
-  <section class="about-section">
-    <div class="about-wrapper">
-      <img src="{% static 'pool.jpg' %}" alt="About Image" class="about-image">
-      
-      <!-- Overlay Content -->
-      <div class="overlay-content">
-        <h1 class="overlay-title">Welcome to Our Website</h1>
-        <p class="overlay-text">We create amazing websites that help your business grow.</p>
-        <button class="booking-btn">Get Started</button>
-      </div>
-    </div>
-  </section>
-  
-
-<section class="gallery-section">
-  <h2 class="gallery-heading">We have every thing you need</h2>
-
+<section id="grooming" class="gallery-section">
+  <h2 class="gallery-heading">Pet Grooming</h2>
+  <p class="grooming-description">
+    At Grey Standard, grooming is a calm, detailed process focused on comfort,
+    hygiene, and style  <br>
+    A basic groom takes up to 2 hours, while a full grooming session may take up to 4-
+    5 hours, depending on coat type, size, and condition
+  </p>
   <div class="gallery-wrapper">
     <div class="card-wrapper">
       <div class="card-1">
-        <img src="{% static 'pool.jpg' %}" loading="lazy" decoding="async" alt="2D Acrylic Sign">
+        <img src="{% static 'hair.webp' %}" loading="lazy" decoding="async" alt="Grey Standard Pet Haircut / Styling">
+        <p class="card-title">1. Haircut / Styling</p>
       </div>
-      <p class="card-title">pool</p>
-    </div>
-    
-    <div class="card-wrapper">
-      <div class="card-1">
-        <img src="{% static 'spa.jpg' %}" loading="lazy" decoding="async" alt="3D LED Sign">
-      </div>
-      <p class="card-title">spa</p>
-    </div>
-    
-    <div class="card-wrapper">
-      <div class="card-1">
-        <img src="{% static 'hall.jpg' %}" loading="lazy" decoding="async" alt="Neon Sign">
-      </div>
-      <p class="card-title">hall</p>
-    </div>
-    
-    <div class="card-wrapper">
-      <div class="card-1">
-        <img src="{% static 'bar.jpg' %}" loading="lazy" decoding="async" alt="Metal Cut Letter">
-      </div>
-      <p class="card-title">Bar</p>
-    </div>
-    <div class="card-wrapper">
-      <div class="card-1">
-        <img src="{% static 'dining.jpg' %}" loading="lazy" decoding="async" alt="Metal Cut Letter">
-      </div>
-      <p class="card-title">dining</p>
-    </div>
-  </div>
-  
-  
-</section>
-<section class="luxury-section">
-  <div class="luxury-container">
-
-    <!-- LEFT CONTENT -->
-    <div class="luxury-left">
-      <span class="subtitle">CURATED COLLECTION</span>
-      <h1 class="luxury-title">
-        GODAWARI<br>
-        FOREST<br>
-        HOTEL
-      </h1>
-      <div class="small-image">
-        <img id="randomSmallImage" src="{% static 'pool.jpg' %}" alt="Random Luxury Architecture">
-      </div>
-    </div>
-
-    <!-- RIGHT CONTENT -->
-    <div class="luxury-right">
-      <div class="main-image">
-        <img id="randomMainImage" src="{% static 'spa.jpg' %}" alt="Random Boutique Beachfront Hotel">
-      </div>
-
-      <div class="luxury-text">
-        <h3>Boutique Beachfront Hotels</h3>
-        <p>
-          Because intimacy always leaves the deepest mark.
-          <br><br>
-          Here, the sea hums in the background and silence becomes the new indulgence.
-          These boutique retreats trade scale for soul — fewer rooms, bigger feelings.
-          Beauty that doesn’t demand attention; it earns it.
-        </p>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-
-<section class="sliding-text-section">
-  <div class="sliding-text">
-      GODAWARI FOREST HOTEL • GODAWARI FOREST HOTEL • GODAWARI FOREST HOTEL
-  </div>
-</section>
-
-<section class="about-section">
-  <div class="about-image-wrapper">
-    <h2 class="about-label">About Us</h2>
-      <img src="{% static 'garden.jpg' %}" loading="lazy" decoding="async" alt="About Our Hotel">
-      <h3 class="about-label2">Experience Comfort & Hospitality</h3>
-      
-      
-  </div>
-  
-
-  <div class="about-content">
-      
-      <p>
-          We offer a perfect blend of comfort, elegance, and personalized service.
-          Located in the heart of the city, our hotel is designed to make every stay
-          memorable and relaxing.
+      <p class="card-desc">
+        A professional, breed-appropriate or coat-condition–based haircut designed to enhance the pet's natural structure, comfort, and overall appearance
       </p>
-
-      <p>
-          With modern amenities and warm hospitality, we ensure an unforgettable
-          experience for all our guests.
+    </div>
+    <div class="card-wrapper">
+      <div class="card-1">
+        <img src="{% static 'bath.webp' %}" loading="lazy" decoding="async" alt="Grey Standard Pet Bath">
+        <p class="card-title">2. Bath</p>
+      </div>
+      <p class="card-desc">
+        Two-step bath using quality shampoo and conditioner to cleanse and nourish the coat
       </p>
+    </div>
+    <div class="card-wrapper">
+      <div class="card-1">
+        <img src="{% static 'blowdry.webp' %}" loading="lazy" decoding="async" alt="Grey Standard Pet Blow Dry">
+        <p class="card-title">3. Blow Dry</p>
+      </div>
+      <p class="card-desc">
+        High-velocity drying for a clean, fluffy, and tangle-free finish
+      </p>
+    </div>
+    <div class="card-wrapper">
+      <div class="card-1">
+        <img src="{% static 'brush.webp' %}" loading="lazy" decoding="async" alt="Grey Standard Pet Brush Out">
+        <p class="card-title">4. Brush Out</p>
+      </div>
+      <p class="card-desc">
+        Gentle brushing to remove loose hair and prevent matting
+      </p>
+    </div>
+    <div class="card-wrapper">
+      <div class="card-1">
+        <img src="{% static 'nail.jpg' %}" loading="lazy" decoding="async" alt="Grey Standard Pet Nail Trim">
+        <p class="card-title">5. Nail Trim</p>
+      </div>
+      <p class="card-desc">
+        Safe trimming to maintain healthy paw posture
+      </p>
+    </div>
+    <div class="card-wrapper">
+      <div class="card-1">
+        <img src="{% static 'earclean.webp' %}" loading="lazy" decoding="async" alt="Grey Standard Pet Ear Cleaning">
+        <p class="card-title">6. Ear Cleaning</p>
+      </div>
+      <p class="card-desc">
+        Cleaning to remove dirt and reduce odor
+      </p>
+    </div>
+    <div class="card-wrapper">
+      <div class="card-1">
+        <img src="{% static 'paw.jpg' %}" loading="lazy" decoding="async" alt="Grey Standard Pet Paw Pad Trim">
+        <p class="card-title">7. Paw Pad Trim</p>
+      </div>
+      <p class="card-desc">
+        Trimming excess hair for better grip and hygiene
+      </p>
+    </div>
+    <div class="card-wrapper">
+      <div class="card-1">
+        <img src="{% static 'anal.webp' %}" loading="lazy" decoding="async" alt="Grey Standard Pet Anal Gland Expression">
+        <p class="card-title">8. Anal Gland Expression</p>
+      </div>
+      <p class="card-desc">
+        Involves manually expressing fluid from small sacs near a Grey Standard pet&#39;s anus
+      </p>
+    </div>
+    <div class="card-wrapper">
+      <div class="card-1">
+        <img src="{% static 'private.jpg' %}" loading="lazy" decoding="async" alt="Grey Standard Pet Sanitary Shave">
+        <p class="card-title">9. Sanitary Shave</p>
+      </div>
+      <p class="card-desc">
+        Hygiene-focused trimming around sensitive areas
+      </p>
+    </div>
+  </div>
+</section>
+<section id="sercives" class="gallery-section">
+  <h2 class="gallery-heading">Services</h2>
+  <p class="services-description">
+    All additional services are performed only in combination with a Basic or Full Grooming package • Individual services are not available separately, as we prioritize complete care, hygiene, and your pet's overall wellbeing 
+  </p>
+  <div class="gallery-wrapper">
+    <div class="card-wrapper">
+      <div class="card-1">
+        <img src="{% static 'medicatedbath.jpg' %}" loading="lazy" decoding="async" alt="Dog Medicated Bath">
+        <p class="card-title">1. Medicated Bath</p>
+      </div>
+      <p class="card-desc">
+        A therapeutic bath using vet-approved products to help with specific skin or coat conditions
+      </p>
+    </div>
+    <div class="card-wrapper">
+      <div class="card-1">
+        <img src="{% static 'tick.webp' %}" loading="lazy" decoding="async" alt="Dog Tick and Flea Treatment">
+        <p class="card-title">2. Tick &amp; Flea Treatment</p>
+      </div>
+      <p class="card-desc">
+        Targeted treatment to remove ticks and fleas and help protect the coat from re-infestation
+      </p>
+    </div>
+    <div class="card-wrapper">
+      <div class="card-1">
+        <img src="{% static 'deshedding.jpg' %}" loading="lazy" decoding="async" alt="Dog De-shedding">
+        <p class="card-title">3. Deshedding</p>
+      </div>
+      <p class="card-desc">
+        A specialized process to reduce excessive shedding by removing loose undercoat and dead hair
+      </p>
+    </div>
+    <div class="card-wrapper">
+      <div class="card-1">
+        <img src="{% static 'Dematting.webp' %}" loading="lazy" decoding="async" alt="Dog De-matting">
+        <p class="card-title">4. Dematting</p>
+      </div>
+      <p class="card-desc">
+        Careful removal of knots and mats to improve comfort and coat health. Performed gently to avoid stress
+      </p>
+    </div>
+    <div class="card-wrapper">
+      <div class="card-1">
+        <img src="{% static 'lightTrimming.jpg' %}" loading="lazy" decoding="async" alt="Dog Light Trimming">
+        <p class="card-title">5. Light Trimming</p>
+      </div>
+      <p class="card-desc">
+        A short haircut session focusing only on essential areas such as the face, paws, sanitary zones, or minor coat adjustments, when a full groom is not required
+      </p>
+    </div>
+  </div>
+</section>
 
-      <a href="#learn-more" class="about-btn">Learn More</a>
+<section id="price" class="about-section">
+  <div class="about-wrapper">
+    <h2 class="pricing-title">Pricing</h2>
+    <picture>
+      <source srcset="{% static 'ppm.png' %}" media="(max-width: 480px)">
+      <img src="{% static 'pp.png' %}" alt="Grey Standard pet grooming price list in Kathmandu - full service cost chart" class="about-image">
+    </picture>
+    <!-- Overlay Content -->
+  </div>
+</section>
+<div class="testimonials-section">
+  <h2 class="testimonials-title">Testimonials</h2>
+  <div class="testimonials-wrapper">
+    <!-- Testimonial 1 -->
+    <div class="testimonial-card">
+      <p>
+        "Grey Standard took amazing care of my dog—his coat looked flawless, and he was so happy. Truly professional and gentle! Highly recommended."
+      </p>
+      <div class="testimonials-rating">
+        <img src="{% static 'gg.png' %}" alt="Google logo">
+        <span>
+          <span class="star-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        </span>
+      </div>
+      <div class="testimonial-author">
+        <span>Priyanka Shrestha</span>
+      </div>
+    </div>
+    <!-- Testimonial 2 -->
+    <div class="testimonial-card">
+      <p>
+        My two Yorkies recently had their grooming done at Grey Standard, and had a great experience!We’ve tried many grooming places before, but we’d definitely choose this one again!
+      </p>
+      <div class="testimonials-rating">
+        <img src="{% static 'gg.png' %}" alt="Google logo">
+        <span>
+          <span class="star-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        </span>
+      </div>
+      <div class="testimonial-author">
+        <span>Prakriti Pradhan</span>
+      </div>
+    </div>
+    <!-- Testimonial 3 -->
+    <div class="testimonial-card">
+      <p>
+        The best pet pampering spot! Professional, trustworthy, and caring. My furry friend was treated so well. Highly recommended!
+      </p>
+      <div class="testimonials-rating">
+        <img src="{% static 'gg.png' %}" alt="Google logo">
+        <span>
+          <span class="star-gold">&#9733;&#9733;&#9733;&#9733;<span class="star-grey">&#9734;</span></span>
+        </span>
+      </div>
+      <div class="testimonial-author">
+        <span>Richa Gurung karkee</span>
+      </div>
+    </div>
+    <!-- Testimonial 4 -->
+    <div class="testimonial-card">
+      <p>
+        Absolutely amazing! Grey Standard treated my pet like royalty. Professional, spotless, welcoming—my anxious dog felt calm, and the grooming was flawless. Fresh-smelling, caring staff and perfect results. Highly recommended!
+      </p>
+      <div class="testimonials-rating">
+        <img src="{% static 'gg.png' %}" alt="Google logo">
+        <span>
+          <span class="star-gold">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+        </span>
+      </div>
+      <div class="testimonial-author">
+        <span>Jeebesh Bikram Adhikary</span>
+      </div>
+    </div>
+  </div>
+</div>
+<section id="petsupply" class="pet-supply-section">
+  <div class="pet-supply-container">
+    <!-- Content -->
+    <div class="pet-supply-text">
+      <h2>PET SUPPLY</h2>
+      <p>
+        At Grey Standard, we stock a carefully curated range of premium pet supplies, with most products sourced from the USA and Thailand • Each item is selected based on quality, safety standards, and effectiveness, ensuring they are gentle, reliable, and suitable for regular use • Our focus is on products that support your pet’s hygiene, comfort, and overall wellbeing, aligning with the high standards we follow in our grooming services •
+      </p>
+    </div>
+    <!-- Images only, no carousel -->
+    <div class="pet-supply-image" style="display: flex; gap: 30px;">
+      <img src="{% static 'tt.png' %}" alt="Tropical Clean Pet shampoo" style="max-width: 240px; width: 100%; height: auto; border-radius: 12px;">
+      <img src="{% static 'rrr.png' %}" alt="Royal Canin Pet Food" style="max-width: 240px; width: 100%; height: 90%; border-radius: 12px; margin-top: 50px;">
+    </div>
+  </div>
+</section>
+
+<div id="blog" class="blog-list-container">
+  <h2 class="blog-title-main">Blog</h2>
+  {% if blogs %}
+  <div class="blog-grid">
+    {% for blog in blogs %}
+      <div class="blog-card">
+        <div class="blog-card-image-wrapper">
+          <img class="blog-card-image" src="{{ blog.image.url }}" alt="Blog Image for {{ blog.title }}">
+          <div class="blog-card-title-overlay">
+            {{ blog.title }}
+          </div>
+          <a class="blog-card-readmore-overlay" href="{% url 'store:blog_detail' blog.slug %}">Read More</a>
+        </div>
+        <div class="blog-card-content">
+          <p class="blog-card-desc">{{ blog.content|truncatewords:20 }}</p>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+  {% else %}
+    <p class="blog-empty-message">No blog posts available yet.</p>
+  {% endif %}
+</div>
+
+<section id="about" class="about-section">
+  <h2 class="about-title-below">About Us</h2>
+  <div class="about-container">
+    <div class="about-text">
+      <p>
+        Greystandard is a signature pet grooming founded in 2025, dedicated to
+enhancing each pet’s unique look through professional grooming and refined
+styling. Led by internationally trained groomer Vishwa Rai, we bring global
+grooming standards to Nepal with a strong focus on quality, comfort, and
+personalized care.
+      </p>
+    </div>
+    <div class="about-image">
+      <img src="{% static 'grey.jpeg' %}" alt="About Grey Standard">
+    </div>
   </div>
 </section>
 
 
 
+<section id="contact" class="contact-map-section">
+  <h2 class="contact-title">Contact Us</h2>
+  <div class="contact-map-container">
+    <!-- Contact Info -->
+    <div class="contact-info">
+      <ul>
+        <li><strong>Address:</strong><br>Le Sherpa Farmers Market (Opposite of President's House, Kathmandu 44600</li>
+        <li><strong>Phone:</strong><br> <a href="tel:+9779801234567">9705428705</a></li>
+        <li><strong>Email:</strong><br> <a href="mailto:info@greystandard.com">info@greystandard.com</a></li>
+        <li><strong>Hours:</strong><br> 10:00 AM – 7:00 PM (Sun–Sat)</li>
+      </ul>
+    </div>
+    <!-- Google Map -->
+    <div class="map-embed">
+      <iframe
+        src="https://www.google.com/maps?q=27.731340584734582,85.3278224343586&hl=en&z=16&output=embed"
+        width="100%" height="380" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+        title="Pinned Location"></iframe>
+      <!-- Display the pinned location overlay for 27.731340584734582, 85.3278224343586 -->
+      <div class="map-overlay">
+        <span class="map-pin-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" style="display:inline-block;vertical-align:middle;">
+            <path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6a2.5 2.5 0 0 1 0 5.5z" fill="#d32e2e"/>
+          </svg>
+        </span>
+        <div>
+          <span class="map-overlay-title">Pinned Location</span>
+          <span class="map-overlay-desc">
+            Le Sherpa Farmers Market (Opposite of President's House, Kathmandu 44600
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-
-
-
+<!-- Scripts stay here (no change from prior code) -->
 <script>
-    const track = document.getElementById('carouselTrack');
-    const prevBtn = document.getElementById('prevBtn');
-    const nextBtn = document.getElementById('nextBtn');
-
-    let scrollAmount = 0;
-
-    // Adjust this based on actual .card width + gap in pixels
-    const cardWidth = 460; // 400px width + 60px gap
-    const visibleCards = 4;
-    const totalCards = track.querySelectorAll('.card').length;
-    const maxScroll = (totalCards - visibleCards) * cardWidth;
-
-    nextBtn.addEventListener('click', () => {
-        if (scrollAmount < maxScroll) {
-            scrollAmount += cardWidth * visibleCards;
-            if (scrollAmount > maxScroll) scrollAmount = maxScroll;
-            track.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-        }
-    });
-
-    prevBtn.addEventListener('click', () => {
-        if (scrollAmount > 0) {
-            scrollAmount -= cardWidth * visibleCards;
-            if (scrollAmount < 0) scrollAmount = 0;
-            track.scrollTo({ left: scrollAmount, behavior: 'smooth' });
-        }
-    });
+let reviews = document.querySelectorAll(".review");
+let index = 0;
+setInterval(()=>{
+  reviews[index].classList.remove("active");
+  index = (index + 1) % reviews.length;
+  reviews[index].classList.add("active");
+},3000);
 </script>
 
-
 <script>
-  const logoInput = document.getElementById("logoInput");
-  const logoPreview = document.getElementById("logoPreview");
-  const previewContainer = document.getElementById("logoPreviewContainer");
-
-  logoInput.addEventListener("change", function () {
-    const file = logoInput.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.onload = function (e) {
-        logoPreview.src = e.target.result;
-        previewContainer.classList.remove("hidden");
-      };
-      reader.readAsDataURL(file);
+  // Swap image on <=480px
+  function updateBannerImage() {
+    const img = document.getElementById('responsive-banner-image');
+    if (window.innerWidth <= 480) {
+      img.src = "{% static 'GreyStandardmobile.jpeg' %}";
+    } else {
+      img.src = "{% static 'GreyStandard.jpeg' %}";
     }
-  });
+  }
+  window.addEventListener('DOMContentLoaded', updateBannerImage);
+  window.addEventListener('resize', updateBannerImage);
 </script>
 
+<!-- CSS MOVED TO THE BOTTOM AS REQUESTED -->
 
-
-
-
-{% endblock %}
+{% endblock  %}

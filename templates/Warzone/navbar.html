@@ -4,10 +4,69 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Express Multipurpose</title>
-
-    <!-- Font Awesome -->
+    <title>{% block title %}Pet & Dog Grooming in Kathmandu | Grey Standard - Best Pet Salon Nepal{% endblock %}</title>
+    <meta name="description" content="{% block meta_description %}Find the best pet and dog grooming in Kathmandu at Grey Standard. Expert pet grooming services including dog grooming in Kathmandu, professional pet care, and premium pet salon. Book your appointment today!{% endblock %}">
+    <meta name="keywords" content="{% block meta_keywords %}pet, dog grooming in kathmandu, pet grooming kathmandu, dog grooming nepal, pet salon kathmandu, pet care kathmandu, dog grooming services, cat grooming kathmandu, pet spa kathmandu, professional pet grooming, best dog groomer kathmandu, pet haircut kathmandu, Grey Standard{% endblock %}">
+    <meta name="author" content="Grey Standard Pet Grooming">
+    <link rel="canonical" href="{% block canonical_url %}https://www.greystandardktm.com/{% endblock %}" />
+    <link rel="shortcut icon" type="image/png" href="{% static 'grey1.png' %}" />
+    <!-- Font Awesome for pet grooming icons and social media -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
+
+    <!-- Structured Data for SEO -->
+    <!-- Social Media Open Graph Meta Tags -->
+    {% block og_meta_tags %}
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Pet & Dog Grooming in Kathmandu | Grey Standard - Best Pet Salon Nepal" />
+    <meta property="og:description" content="Find the best pet and dog grooming in Kathmandu at Grey Standard. Expert pet grooming services and professional pet care. Book your appointment today!" />
+    <meta property="og:url" content="https://www.greystandardktm.com/" />
+    <meta property="og:image" content="https://www.greystandardktm.com/static/grey1.png" />
+    <meta property="og:site_name" content="Grey Standard Pet Grooming" />
+    {% endblock %}
+
+    <!-- Twitter Card Meta Tags -->
+    {% block twitter_meta_tags %}
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Pet & Dog Grooming in Kathmandu | Grey Standard - Best Pet Salon Nepal" />
+    <meta name="twitter:description" content="Find the best pet and dog grooming in Kathmandu at Grey Standard. Expert pet grooming services and professional pet care." />
+    <meta name="twitter:image" content="https://www.greystandardktm.com/static/grey1.png" />
+    <meta name="twitter:site" content="@greystandardktm" />
+    {% endblock %}
+    {% block extra_meta %}{% endblock %}
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "PetStore",
+      "name": "Grey Standard Pet Grooming",
+      "alternateName": "Pet & Dog Grooming in Kathmandu",
+      "image": "https://www.greystandardktm.com/static/grey1.png",
+      "description": "Professional pet and dog grooming in Kathmandu. Expert pet grooming services including dog grooming in Kathmandu, pet care, and premium pet salon services in Nepal.",
+      "keywords": "pet, dog grooming in kathmandu, pet grooming kathmandu, dog grooming nepal",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Maharajgunj",
+        "addressLocality": "Kathmandu",
+        "addressRegion": "Bagmati",
+        "postalCode": "44600",
+        "addressCountry": "NP"
+      },
+      "telephone": "+977 9705428705",
+      "email": "info@greystandard.com",
+      "openingHours": "Sa-Su 09:00-19:00",
+      "priceRange": "$$",
+      "url": "https://www.greystandardktm.com/",
+      "sameAs": [
+        "https://www.instagram.com/greystandard/",
+        "https://www.tiktok.com/@grey13793"
+      ],
+      "areaServed": {
+        "@type": "City",
+        "name": "Kathmandu",
+        "addressCountry": "NP"
+      },
+      "serviceType": ["Pet Grooming", "Dog Grooming", "Pet Salon", "Pet Care"]
+    }
+    </script>
 
     <!-- Styles -->
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}" />
@@ -17,206 +76,261 @@
 
     <!-- Discount Banner -->
     
-
+    
     <!-- Header -->
-    <header class="header">
+    <header class="header" itemscope itemtype="https://schema.org/Organization">
         
-        <div class="icons" style="color: white; display: flex; align-items: center; gap: 24px; position: relative; top: -18px;">
-            <a href="#" id="menuBtn" style="color: white; display: flex; align-items: center; gap: 26px; position: relative; top: -13px;">
-                <i class="fas fa-bars"></i>
-                <span style="font-size: 18px;">Menu</span>
-            </a>
-        </div>
+      <!-- Hamburger menu for mobile -->
+      <nav class="navbar-container" aria-label="Main Navigation">
+        <button class="hamburger" id="hamburger" aria-label="Open Menu" aria-expanded="false" aria-controls="drawer">
+          <span class="bar"></span>
+          <span class="bar"></span>
+          <span class="bar"></span>
+        </button>
 
-        <div class="logo">
-            <a href="{% url 'store:home' %}">
-                <img src="{% static 'hotellogo.png' %}" alt="Logo">
-            </a>
-        </div>
-        <nav>
-            <ul class="navbar" id="navbar">
-                <li class="nav-item">
-                    <a href="tel:+9779812345678" title="Call Us">
-                        <i class="fas fa-phone-alt"></i>
-                    </a>
-                </li>
-        
-                <!-- Vertical divider -->
-                <li class="divider"></li>
-        
-                <li class="nav-item">
-                    <a href="#booking" class="booking-btn">Book Now</a>
-                </li>
-            </ul>
-        </nav>
-        
-        
-        
-        <div class="drawer" id="drawer">
-            <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About Us</a></li>
-                <li><a href="#gallery">Gallery</a></li>
-                <li><a href="#contact">Contact Us</a></li>
-                
-            </ul>
-        </div>
+        <ul class="navbar" id="navbar">
+            <li class="nav-item">
+                <a href="#grooming" title="Signature Pet Grooming Services in Kathmandu">Grooming</a>
+            </li>
+            <li class="nav-item">
+                <a href="#services" title="Full Range of Pet Grooming Services">Services</a>
+            </li>
+            <li class="nav-item">
+                <a href="#price" title="Pet Grooming Price List">Price</a>
+            </li>
+            <li class="nav-item">
+                <a href="#petsupply" title="Pet Supply Shop Nepal">PetSupply</a>
+            </li>
+            <li class="nav-item">
+                <a href="#about" title="About Grey Standard Pet Grooming">About</a>
+            </li>
+            <li class="nav-item">
+                <a href="#contact" title="Contact Greystandard Pet Grooming Kathmandu">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a href="#blog" title="Pet Grooming Tips and Advice Blog">Blog</a>
+            </li>
+        </ul>
 
-        <div class="overlay1" id="overlay"></div>
-
-        
+        <!-- Drawer overlay -->
+        <div class="drawer" id="drawer" tabindex="-1" aria-label="Mobile Menu">
+          <button class="drawer-close" id="drawer-close" aria-label="Close Menu" style="background: none; border: none; position: absolute; top: 24px; right: 18px; font-size: 2em; cursor: pointer;">&times;</button>
+          <ul>
+              <li><a href="#grooming" class="drawer-link" title="Grooming">Grooming</a></li>
+              <li><a href="#services" class="drawer-link" title="Services">Services</a></li>
+              <li><a href="#price" class="drawer-link" title="Price">Price</a></li>
+              <li><a href="#petsupply" class="drawer-link" title="PetSupply">PetSupply</a></li>
+              <li><a href="#about" class="drawer-link" title="About">About</a></li>
+              <li><a href="#contact" class="drawer-link" title="Contact">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Semi-transparent backdrop overlay for drawer -->
+        <div id="drawer-backdrop" style="display:none;position:fixed;top:0;left:0;width:100vw;height:100vh;background:rgba(0,0,0,0.18);z-index:999;"></div>
+      </nav>
+      
+      <div class="logo" itemprop="logo" itemscope itemtype="https://schema.org/ImageObject">
+          <a href="{% url 'store:home' %}" title="Grey Standard Pet Grooming Kathmandu Home">
+              <img src="{% static 'grey1.png' %}" alt="Grey Standard Pet Grooming Logo" itemprop="url">
+          </a>
+      </div>
+      
+      <a class="booking-btn" href="https://docs.google.com/forms/d/e/1FAIpQLScyeuId2Cg32xq6RkKIUXXbKnxl1HaujTmo0_S9CxnuzzJvKA/viewform" target="_blank" rel="noopener" title="Book a Pet Grooming Appointment in Kathmandu">Book here</a>
+      
     </header>
 
     <!-- Main Content -->
     <main>
+        
         {% block content %}
-        <!-- Page-specific content -->
+        <!-- Page-specific content for SEO, such as pet grooming expertise, customer reviews, and pet care tips, should be placed here. -->
         {% endblock %}
     </main>
 
     <!-- Footer -->
-    <footer class="site-footer">
-        <div class="footer-container">
-      
-          <!-- Newsletter -->
-          <div class="footer-newsletter">
-            <h2>newsletter</h2>
-            <p>
-              Offers, news and destinations to fall in love with.<br>
-              Who we are and what we want to share with you.<br>
-              
-            </p>
-      
-            <!-- <form class="newsletter-form">
-              <input type="text" placeholder="Name">
-              <input type="email" placeholder="Email address">
-              <button type="submit">Send</button>
-            </form> -->
-      
-            <label class="privacy">
-              <input type="checkbox">
-              I have read and accept the <a href="#">legal notice</a> and the
-              <a href="#">privacy policy</a>.
-            </label>
-          </div>
-      
-          <!-- Footer Links -->
-          <div class="footer-links">
-      
-            <div>
-              <h4>Contact</h4>
-              <a href="#">Godawari Forest Hotel Projects</a>
-              <a href="#">About Godawari Forest Hotel</a>
-              <a href="#">Join Our Team</a>
-            </div>
-      
-            <div>
-              <h4>FAQ's</h4>
-              <a href="#">Godawari Forest Hotel Friends</a>
-              <a href="#">Agencies and Professionals</a>
-            </div>
-      
-            <div>
-              <h4>Headquarters</h4>
-              <p>+34 911 178 989</p>
-              <p>info@godawariforesthotel.com</p>
-            </div>
-      
-            <div>
-              <h4>Information & Bookings</h4>
-              <p>Mon–Sun 9 AM to 10 PM CET</p>
-              <p>+34 919 992 690</p>
-            </div>
-      
-          </div>
-      
-          <!-- Social -->
-          <div class="footer-social">
-            <a href="#">LinkedIn</a>
-            <a href="#">Facebook</a>
-            <a href="#">Instagram</a>
-          </div>
-      
+    <footer class="footer">
+      <div class="footer-container">
+
+        <!-- Left Column -->
+        <div class="footer-logo">
+            <img src="{% static 'grey1.png' %}" alt="Grey Standard Pet Grooming Logo" style="height: 140px; filter: invert(1);">
         </div>
-      </footer>
-      
+        <div class="footer-col">
+          <h2 style="font-size:1.3em;">Main Location</h2>
+          <address>
+            <span itemprop="address" itemscope itemtype="https://schema.org/PostalAddress">
+              <span itemprop="streetAddress">Maharajgunj</span>,<br>
+              <span itemprop="addressLocality">Kathmandu</span>, 
+              <span itemprop="addressCountry">Nepal</span>
+            </span>
+          </address>
+          <p class="hours"><strong>Opening hours</strong><br>
+            Sat - Sun | 09:00 - 19:00
+          </p>
+        </div>
 
-    <script>
-  const menuBtn = document.getElementById("menuBtn");
-  const drawer = document.getElementById("drawer");
-  const overlay = document.getElementById("overlay");
+        <!-- Middle Column: Site Navigation for SEO -->
+        <div class="footer-col">
+          <nav aria-label="Footer Menu">
+            <ul class="footer-menu">
+              <li><a href="#grooming" title="Dog & Cat Grooming Kathmandu">Grooming</a></li>
+              <li><a href="#services" title="Pet Services Kathmandu">Services</a></li>
+              <li><a href="#price" title="Pet Grooming Prices Nepal">Price</a></li>
+              <li><a href="#petsupply" title="Pet Supplies Nepal">PetSupply</a></li>
+              <li><a href="#about" title="About Us Grey Standard">About</a></li>
+              <li><a href="#blog" title="Pet Blog Nepal">Blog</a></li>
+              <li><a href="#contact" title="Contact Pet Groomer Kathmandu">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
 
-  // Open drawer
-  menuBtn.addEventListener("click", function (e) {
-    e.preventDefault();
-    drawer.classList.add("open");
-    overlay.classList.add("active");
-  });
+        <!-- Right Column: Google Maps Link -->
+        <div class="footer-col">
+          <h4>Grey Standard Pet Grooming</h4>
+          <a href="https://maps.app.goo.gl/YOUR_LOCATION" target="_blank" rel="noopener" title="Find Grey Standard Pet Grooming on Google Maps" class="route-link">View on Google Maps &rarr;</a>
+        </div>
 
-  // Close drawer when clicking outside
-  overlay.addEventListener("click", function () {
-    drawer.classList.remove("open");
-    overlay.classList.remove("active");
-  });
-</script>
+        <!-- Social Icons for Engagement -->
+        <div class="footer-social">
+          <a href="https://www.instagram.com/greystandard/" target="_blank" title="Grey Standard Instagram">
+            <i class="fab fa-instagram"></i>
+          </a>
+          <a href="https://www.tiktok.com/@grey13793?_t=ZS-8zQBVR09niC&_r=1&fbclid=PAc3J0YwZhcHBfaWQMMjU2MjgxMDQwNTU4AAGndRDF4mewbZ5OUyHO-JdQH5x9D3CRUR_tinMV1506RK_jcrkVusjAx30K7qA&brid=y1GPPj8k7o8yuDoA6lgdGQ" target="_blank" title="Grey Standard TikTok">
+            <i class="fab fa-tiktok"></i>
+          </a>
+          <a href="https://wa.me/9779705428705" target="_blank" title="WhatsApp with Grey Standard Pet Grooming">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+    
+      </div>
+    
+      <!-- Bottom Bar with copyright and agency -->
+      <div class="footer-bottom" style="display: flex; justify-content: center; align-items: center; flex-direction: column;">
+        <p style="text-align: center; margin: 0;">© 2025 Grey Standard Pet Grooming Kathmandu. All Rights Reserved.</p>
+        <h3 style="text-align: center; color: #fff; font-size: 23px; margin: 0; font-family: 'typo', Arial, sans-serif;">
+           <a href="https://hitzz.co" target="_blank" rel="noopener" style="color: #fff; text-decoration: underline;">Crafted by Hitzz</a>
+        </h3>
+      </div>
+    </footer>
+
+    <!-- Accessibility: main heading for screen readers only -->
+    <span class="visually-hidden" style="position: absolute; left:-9999px;">
+      Pet and Dog Grooming in Kathmandu - Grey Standard Pet Grooming Nepal. The best pet grooming and dog grooming in Kathmandu, led by certified groomer Vishwa Rai.
+    </span>
 
     <!-- Scripts -->
     <script>
+        // Banner message rotation (SEO not impacted, but JS is clean)
         document.addEventListener('DOMContentLoaded', function () {
             const messages = document.querySelectorAll('.banner-message');
             let currentIndex = 0;
             messages.forEach(msg => msg.style.display = 'none');
-            messages[currentIndex].style.display = 'block';
-            setInterval(() => {
-                messages[currentIndex].style.display = 'none';
-                currentIndex = (currentIndex + 1) % messages.length;
+            if (messages.length) {
                 messages[currentIndex].style.display = 'block';
-            }, 5000);
+                setInterval(() => {
+                    messages[currentIndex].style.display = 'none';
+                    currentIndex = (currentIndex + 1) % messages.length;
+                    messages[currentIndex].style.display = 'block';
+                }, 5000);
+            }
         });
 
         const hamburger = document.getElementById('hamburger');
         const navbar = document.getElementById('navbar');
 
+        // Hamburger toggles navbar (desktop/mobile accessibility)
         hamburger.addEventListener('click', function () {
             navbar.classList.toggle('show');
             this.classList.toggle('active');
         });
     </script>
     <script>
-        const header = document.querySelector('.header');
-    
-        window.addEventListener('scroll', () => {
-            if (window.scrollY > 0) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
+    // Header shrink and fixed on scroll for usability
+    window.addEventListener('scroll', function () {
+        var header = document.querySelector('header');
+        if (window.scrollY > 50) {
+            header.classList.add('shrink');
+        } else {
+            header.classList.remove('shrink');
+        }
+    });
+
+    let lastScrollTop = 0;
+    const header = document.querySelector('header');
+    const scrollThreshold = 300;
+
+    window.addEventListener('scroll', function () {
+        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        if (scrollTop > lastScrollTop && scrollTop > scrollThreshold) {
+            header.style.top = '-130px';
+        } else {
+            header.style.top = '0';
+        }
+        lastScrollTop = scrollTop;
+    });
+    </script>
+    <script>
+    // Hamburger and drawer functionality for mobile UX (SEO best practice: simple, fast)
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburger = document.getElementById('hamburger');
+        const drawer = document.getElementById('drawer');
+        const closeBtn = document.getElementById('drawer-close');
+        const drawerLinks = drawer.querySelectorAll('.drawer-link');
+        const backdrop = document.getElementById('drawer-backdrop');
+
+        function openDrawer() {
+            drawer.classList.add('open');
+            hamburger.setAttribute('aria-expanded', 'true');
+            document.body.classList.add('no-scroll');
+            document.documentElement.classList.add('no-scroll');
+            if (backdrop) {
+                backdrop.classList.add('active');
+                backdrop.style.display = 'block';
+            }
+            drawer.focus();
+        }
+        function closeDrawer() {
+            drawer.classList.remove('open');
+            hamburger.setAttribute('aria-expanded', 'false');
+            document.body.classList.remove('no-scroll');
+            document.documentElement.classList.remove('no-scroll');
+            if (backdrop) {
+                backdrop.classList.remove('active');
+                setTimeout(()=>{ backdrop.style.display='none'; }, 180);
+            }
+            hamburger.focus();
+        }
+
+        hamburger.addEventListener('click', function(e) {
+            openDrawer();
+        });
+        closeBtn.addEventListener('click', function(e) {
+            closeDrawer();
+        });
+        drawerLinks.forEach(link => {
+            link.addEventListener('click', closeDrawer);
+        });
+        drawer.addEventListener('keydown', function(e) {
+            if (e.key === "Escape") {
+                closeDrawer();
             }
         });
-        document.addEventListener("DOMContentLoaded", () => {
-            const body = document.body;
-            const header = document.querySelector('header');
-            
-            let lastScroll = 0;
-            
-            window.addEventListener("scroll", () => {
-                const currentScroll = window.pageYOffset;
-        
-                if (currentScroll <= 0) {
-                    body.classList.remove("scroll-up");
-                } else if (currentScroll > lastScroll && !body.classList.contains("scroll-down")) {
-                    if (currentScroll > header.offsetHeight) {
-                        body.classList.remove("scroll-up");
-                        body.classList.add("scroll-down");
-                    }
-                } else if (currentScroll < lastScroll && body.classList.contains("scroll-down")) {
-                    body.classList.remove("scroll-down");
-                    body.classList.add("scroll-up");
-                }
-        
-                lastScroll = currentScroll;
-            });
-        });
-        
+        if (backdrop) {
+            backdrop.addEventListener('click', closeDrawer);
+        }
+
+        // Prevent scroll behind drawer on mobile
+        function preventScroll(e){
+            if(drawer.classList.contains('open')) {
+                e.preventDefault();
+            }
+        }
+        drawer.addEventListener('touchmove', preventScroll, { passive: false });
+        if (backdrop) {
+            backdrop.addEventListener('wheel', preventScroll, { passive: false });
+            backdrop.addEventListener('touchmove', preventScroll, { passive: false });
+        }
+    });
     </script>
 </body>
 </html>

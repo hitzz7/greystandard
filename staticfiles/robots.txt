@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /staticfiles/
+
+Sitemap: https://godawarihotel.hitzz.co/sitemap.xml
+
