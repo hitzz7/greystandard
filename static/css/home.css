@@ -331,11 +331,27 @@
   transition: transform 0.27s cubic-bezier(.41,1.13,.81,1.01);
 }
 
-
-
 .booking-btn:hover::after,
 .booking-btn:focus::after {
   transform: translateX(20px);
+}
+
+/* Slightly smaller and moved left on small screens */
+@media (max-width: 480px) {
+  .booking-btn {
+    padding: 13px 26px;
+    font-size: 16px;
+    margin-left: 0px;
+    margin-right: 35px;
+    border-radius: 42px;
+    gap: 6px;
+  }
+  .booking-btn::after {
+    width: 18px;
+    height: 18px;
+    margin-left: 9px;
+    background-size: 18px 18px;
+  }
 }
 
 
@@ -2206,6 +2222,28 @@ footer{
   }
   .contact-info ul {
     font-size: 20px !important;
+  }
+  .map-embed {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    flex: 1 1 100% !important;
+  }
+  .map-embed iframe {
+    width: 100% !important;
+    height: 300px !important;
+  }
+  .map-overlay {
+    max-width: 85% !important;
+    padding: 12px 16px !important;
+    top: 12px !important;
+    left: 12px !important;
+  }
+  .map-overlay-title {
+    font-size: 1em !important;
+  }
+  .map-overlay-desc {
+    font-size: 0.85em !important;
   }
 }
 
