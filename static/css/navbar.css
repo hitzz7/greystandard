@@ -212,7 +212,7 @@ header.shrink {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-left: -200px;
+    margin-left: -250px;
     width: 100%;
 }
 @media (max-width: 480px) {
@@ -261,7 +261,7 @@ header.shrink {
 /* Phone icon */
 .navbar a {
     color: black;
-    font-size: 18px;
+    font-size: 20px;
     text-decoration: none;
     position: relative;
     font-family: "delmon",sans-serif;
