@@ -93,7 +93,7 @@
                 <a href="#grooming" title="Signature Pet Grooming Services in Kathmandu">Grooming</a>
             </li>
             <li class="nav-item">
-                <a href="#services" title="Full Range of Pet Grooming Services">Services</a>
+                <a href="#second" title="Full Range of Pet Grooming Services">Services</a>
             </li>
             <li class="nav-item">
                 <a href="#price" title="Pet Grooming Price List">Price</a>
@@ -164,7 +164,7 @@
             </span>
           </address>
           <p class="hours"><strong>Opening hours</strong><br>
-            Sat - Sun | 09:00 - 19:00
+            Sat - Sun | 09:00 am - 7:00 pm
           </p>
         </div>
 
@@ -173,7 +173,7 @@
           <nav aria-label="Footer Menu">
             <ul class="footer-menu">
               <li><a href="#grooming" title="Dog & Cat Grooming Kathmandu">Grooming</a></li>
-              <li><a href="#services" title="Pet Services Kathmandu">Services</a></li>
+              <li><a href="#second" title="Pet Services Kathmandu">Services</a></li>
               <li><a href="#price" title="Pet Grooming Prices Nepal">Price</a></li>
               <li><a href="#petsupply" title="Pet Supplies Nepal">PetSupply</a></li>
               <li><a href="#about" title="About Us Grey Standard">About</a></li>
@@ -330,6 +330,30 @@
             backdrop.addEventListener('wheel', preventScroll, { passive: false });
             backdrop.addEventListener('touchmove', preventScroll, { passive: false });
         }
+    });
+    </script>
+    <script>
+    // Smooth scroll for anchor links
+    document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('.navbar a[href^="#"]');
+        navLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href && href !== '#') {
+                    const targetId = href.substring(1);
+                    const targetElement = document.getElementById(targetId);
+                    if (targetElement) {
+                        e.preventDefault();
+                        const headerHeight = document.querySelector('header').offsetHeight;
+                        const targetPosition = targetElement.offsetTop - headerHeight - 20;
+                        window.scrollTo({
+                            top: targetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                }
+            });
+        });
     });
     </script>
 </body>
