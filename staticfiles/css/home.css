@@ -672,6 +672,7 @@
   text-align: center;
 }
 
+
 .gallery-heading {
   font-size: 72px;
   font-weight: bold;
@@ -1385,12 +1386,7 @@
   }
 }
 
-.about-section {
-  width: 100%;
-  background: #fff;
-  padding: 50px 0;
-  
-}
+
 
 .about-wrapper {
   position: relative;
@@ -1410,7 +1406,7 @@
 
 @media (max-width: 480px) {
   .about-wrapper {
-    height: 780px;
+    height: 650px;
     margin: 0 10px;
     border-radius: 12px;
   }
@@ -1418,10 +1414,10 @@
     border-radius: 16px;
     height: 100%;
     min-height: 240px;
-    max-height: 1100px;
+    max-height: 650px;
     object-fit: contain;
     position: relative;
-    top: -70px;
+    top: -0px;
   }
 }
 
@@ -1780,14 +1776,14 @@ footer{
 
 .blog-list-container {
   max-width: 1210px; /* 100px less than before */
-  margin: 0 auto 70px auto;
+  margin: 0 auto 40px auto;
   padding: 0 14px;
 }
 .blog-title-main {
   text-align: left;
   font-size: 70px;
   margin: 70px 0 30px 0;
-  margin-left: -50px;
+  margin-left: -30px;
   font-family: 'delmon', sans-serif;
   font-weight: bold;
   letter-spacing: -1.3px;
@@ -1797,6 +1793,7 @@ footer{
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 2.1em 1.5em;
+  margin-top: 36px;
 }
 .blog-card {
   background: #fff;
@@ -1889,6 +1886,7 @@ footer{
   .blog-title-main {
     font-size: 40px;
     margin-top: 32px;
+    margin-bottom: 50px;
   }
   .blog-list-container {
     max-width: 890px;
@@ -1924,7 +1922,7 @@ footer{
   .blog-title-main {
     font-size: 2.1rem;
     margin-top: 13px;
-    margin-left:0;
+    margin-left:15px;
   }
   .blog-list-container {
     max-width: 99vw;
@@ -2014,7 +2012,7 @@ footer{
   .services-description {
     font-size: 1.05rem !important;
     max-width: 98vw !important;
-    margin: 0 10px 38px 10px !important;
+    margin: 0 5px 38px 5px !important;
     padding: 0 2px !important;
     text-align: left !important;
   }
@@ -2039,11 +2037,11 @@ footer{
 }
 /* Pricing Section */
 .pricing-title {
-  text-align:left; font-family: 'delmon',sans-serif; font-size: 72px; font-weight: bold; color: #242424; margin-top: 12px; margin-bottom: 24px; margin-left: 150px;
+  text-align:left; font-family: 'delmon',sans-serif; font-size: 72px; font-weight: bold; color: #242424; margin-top: 12px; margin-bottom: 24px; margin-left: 100px;
 }
 @media (max-width: 480px) {
   .pricing-title {
-    margin-left: 0 !important;
+    margin-left: 15px !important;
     font-size: 2.1rem !important;
   }
 }
@@ -2056,12 +2054,24 @@ footer{
 }
 @media (max-width: 480px) {
   .testimonials-title {
-    margin-left: 0 !important;
+    margin-left:15px !important;
     font-size: 2.1rem !important;
   }
 }
 .testimonials-wrapper {
-  display: flex; flex-wrap: wrap; justify-content: center; gap: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 32px;
+}
+
+@media (max-width: 480px) {
+  .testimonials-wrapper {
+    flex-direction: column;
+    gap: 18px;
+    align-items: center;
+    margin-top: 50px;
+  }
 }
 .testimonial-card {
   background: #000; color: #fff; border-radius: 18px; box-shadow: 0 2px 18px rgba(0,0,0,0.10); width: 320px; min-height: 210px; display: flex; flex-direction: column; justify-content: space-between; padding: 28px 24px; position: relative;
@@ -2083,7 +2093,9 @@ footer{
   display: flex; align-items: center; justify-content: center; max-width: 1300px; margin: 0 auto; gap: 64px; flex-wrap: wrap;
 }
 .pet-supply-text {
-  flex: 1 1 400px; min-width: 340px;
+  flex: 1 1 400px; 
+  min-width: 340px;
+  margin-left: 20px;
 }
 .pet-supply-text h2 {
   font-family: 'delmon',sans-serif; font-size: 72px; font-weight: bold; margin-bottom: 24px; color: #181B1E;
@@ -2093,6 +2105,7 @@ footer{
   line-height: 1.75; 
   color: #555; 
   font-family: 'delmon', Arial, sans-serif; 
+  margin-top: 56px;
   margin-bottom: 8px;
   font-weight: 600;
 }
@@ -2256,7 +2269,7 @@ footer{
     max-width: 98vw !important;
   }
   .contact-title {
-    margin-left: 0 !important;
+    margin-left: 15px !important;
     margin-right: 0 !important;
     margin-bottom: 20px !important;
     font-size: 2.1rem !important;
@@ -2326,8 +2339,9 @@ footer{
   min-width: 300px;
   border-radius: 15px;
   background-color: #fff;
-  margin-top: 0;
+  margin-top: -55px;   /* Move up slightly */
   margin-bottom: 0;
+  margin-left: -48px;  /* Move left slightly */
   padding-top: 0;
   padding-bottom: 0;
 }
@@ -2384,6 +2398,7 @@ footer{
     border-radius: 12px;
     margin-top: 0;
     margin-bottom: 0;
+    margin-left: 0;
     padding-top: 0;
     padding-bottom: 0;
   }
@@ -2413,11 +2428,12 @@ footer{
 /* Responsive styles for 480px and below */
 @media (max-width: 480px) {
   .about-section {
-    padding: 36px 0;
+    padding: 26px 0;
+    
   }
   .about-title-below {
-    font-size: 2em;
-    margin-left: 2px;
+    font-size: 2.1em;
+    margin-left: 20px;
     margin-bottom: 0;
     margin-top: 0;
     text-align: left;
@@ -2438,10 +2454,14 @@ footer{
     overflow: hidden; /* Hide overflow if content exceeds the max-height */
   }
   .about-text p {
-    font-size: 1.05 rem;
+    font-size: 1.05rem;
     margin-bottom: 0;
-    margin-top: 0;
-    line-height: 1.25; /* Reduce line height to make text more compact */
+    margin-top: 15px;
+    margin-left: 10px;
+    line-height: 1.55; /* Reduce line height to make text more compact */
+     /* "ring" effect, 2px gray ring */
+    
+    
   }
   .about-image {
     margin-top: 0;
