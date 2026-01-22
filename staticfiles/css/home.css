@@ -22,6 +22,7 @@
 @media (max-width: 480px) {
   .bg-image {
     margin-top: -100px;
+    margin-bottom: -30px;
   }
   .bg-image img {
     height: 70vh; /* Make the image smaller in mobile */
@@ -676,18 +677,20 @@
 .gallery-heading {
   font-size: 72px;
   font-weight: bold;
-  margin-bottom: 40px;
+  margin-bottom: 15px;
   font-family: "Delmon",sans-serif;
   color: #333;
   display: flex;
   justify-content: flex-start;
   text-align: left;
   margin-left: 120px;
+  margin-right: 0;
 }
 
 @media (max-width: 480px) {
   .gallery-heading {
     margin-left: 0;
+    margin-bottom: 15px;
     font-size: 2.1rem;
   }
 }
@@ -697,7 +700,7 @@
   grid-template-columns: repeat(3, 1fr);
   gap: 30px;
   max-width: 1400px;
-  margin: 0px 40px;
+  margin: 0 120px;
 }
 
 .card-wrapper {
@@ -743,11 +746,11 @@
   font-size: 18px;
   color: #333;
   margin-top: 18px;
-  font-family: "Delmon", Arial, Helvetica, sans-serif;
+  font-family:  Arial, Helvetica, sans-serif;
   text-align: center;
   max-width: 340px;
   line-height: 1.55;
-  font-weight: 400;
+  font-weight: 600;
 }
 
 @media (max-width: 480px) {
@@ -1408,6 +1411,7 @@
   .about-wrapper {
     height: 650px;
     margin: 0 10px;
+    margin-bottom: -40px;
     border-radius: 12px;
   }
   .about-wrapper img.about-image {
@@ -1417,7 +1421,7 @@
     max-height: 650px;
     object-fit: contain;
     position: relative;
-    top: -0px;
+    top: -80px;
   }
 }
 
@@ -1794,6 +1798,8 @@ footer{
   grid-template-columns: repeat(4, 1fr);
   gap: 2.1em 1.5em;
   margin-top: 36px;
+  margin-left: -30px;
+  margin-right: -30px;
 }
 .blog-card {
   background: #fff;
@@ -1894,6 +1900,8 @@ footer{
   .blog-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 1.3em 0.8em;
+    margin-left: -30px;
+    margin-right: -30px;
   }
   .blog-card-title-overlay {
     font-size: 1.09em;
@@ -1913,8 +1921,9 @@ footer{
   .blog-grid {
     grid-template-columns: 1fr;
     gap: 1.1em 0;
-    margin-left: 25px;
-    margin-right: 25px;
+    margin-top: -20px;
+    margin-left: 15px;
+    margin-right: 15px;
   }
   .blog-card-title-overlay {
     font-size: 0.95em;
@@ -1922,11 +1931,12 @@ footer{
   .blog-title-main {
     font-size: 2.1rem;
     margin-top: 13px;
-    margin-left:15px;
+    margin-left: 15px;
   }
   .blog-list-container {
     max-width: 99vw;
     padding: 0 4px;
+    margin-bottom: 80px;
   }
   .blog-card-content {
     font-size: 0.93em;
@@ -1999,12 +2009,12 @@ footer{
 /* Carousel, Pet Supply, Testimonials, Pricing, Blog, About, Contact, Misc */
 .grooming-description,
 .services-description {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   color: #555;
   max-width: 1050px;
-  margin: 0 auto 52px;
-  text-align: center;
-  font-family: 'delmon', Arial, Helvetica, sans-serif;
+  margin: 0 0 52px 120px;
+  text-align: left;
+  font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
 }
 @media (max-width: 480px) {
@@ -2012,9 +2022,12 @@ footer{
   .services-description {
     font-size: 1.05rem !important;
     max-width: 98vw !important;
-    margin: 0 5px 38px 5px !important;
+    margin: 0 0 38px 0 !important;
     padding: 0 2px !important;
     text-align: left !important;
+  }
+  .gallery-wrapper {
+    margin: 0 15px !important;
   }
 }
 .services-carousel-container {
@@ -2050,7 +2063,7 @@ footer{
   background: #fff; padding: 56px 0;
 }
 .testimonials-title {
-  font-family: 'delmon', sans-serif; font-size: 72px; display: flex; justify-content: flex-start; margin-left: 120px; color: #111; margin-bottom: 36px; letter-spacing: 1px;
+  font-family: 'delmon', sans-serif; font-size: 72px; display: flex; justify-content: flex-start; margin-left: 120px; color: #111; margin-bottom: 25px; letter-spacing: 1px;
 }
 @media (max-width: 480px) {
   .testimonials-title {
@@ -2061,8 +2074,10 @@ footer{
 .testimonials-wrapper {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
   gap: 32px;
+  margin-left: 120px;
+  margin-right: 120px;
 }
 
 @media (max-width: 480px) {
@@ -2070,11 +2085,30 @@ footer{
     flex-direction: column;
     gap: 18px;
     align-items: center;
-    margin-top: 50px;
+    margin-top: 20px;
+    margin-left: 15px !important;
+    margin-right: 15px !important;
+    margin-bottom: -30px;
+  }
+  .testimonial-card {
+    width: 100% !important;
+    flex: 0 0 100% !important;
   }
 }
 .testimonial-card {
-  background: #000; color: #fff; border-radius: 18px; box-shadow: 0 2px 18px rgba(0,0,0,0.10); width: 320px; min-height: 210px; display: flex; flex-direction: column; justify-content: space-between; padding: 28px 24px; position: relative;
+  background: #000; color: #fff; border-radius: 18px; box-shadow: 0 2px 18px rgba(0,0,0,0.10); width: calc((100% - 96px) / 4); min-height: 210px; display: flex; flex-direction: column; justify-content: space-between; padding: 28px 24px; position: relative; flex: 0 0 calc((100% - 96px) / 4);
+}
+@media (max-width: 1400px) {
+  .testimonial-card {
+    width: calc((100% - 64px) / 3);
+    flex: 0 0 calc((100% - 64px) / 3);
+  }
+}
+@media (max-width: 1024px) {
+  .testimonial-card {
+    width: calc((100% - 32px) / 2);
+    flex: 0 0 calc((100% - 32px) / 2);
+  }
 }
 .testimonials-rating {
   display: flex; flex-direction: column; align-items: flex-end; margin-bottom: -8px;
@@ -2101,11 +2135,11 @@ footer{
   font-family: 'delmon',sans-serif; font-size: 72px; font-weight: bold; margin-bottom: 24px; color: #181B1E;
 }
 .pet-supply-text p {
-  font-size: 1.5em; 
+  font-size: 1.4em; 
   line-height: 1.75; 
   color: #555; 
-  font-family: 'delmon', Arial, sans-serif; 
-  margin-top: 56px;
+  font-family:  Arial, sans-serif; 
+ 
   margin-bottom: 8px;
   font-weight: 600;
 }
@@ -2147,6 +2181,7 @@ footer{
     gap: 32px !important;
     padding: 0 8px !important;
     align-items: stretch !important;
+    margin-bottom: 40px;
   }
   .pet-supply-text {
     min-width: 0 !important;
@@ -2160,7 +2195,7 @@ footer{
   }
   .pet-supply-text p {
     font-size: 1.05rem !important;
-    margin-bottom: 14px !important;
+    margin-bottom: 0px !important;
   }
   .pet-supply-image {
     min-width: 0 !important;
@@ -2183,10 +2218,10 @@ footer{
   }
   .pet-supply-serial-images img {
     width: 100vw !important;
-    height: 200px !important;
+    height: 100px !important;
     object-fit: cover !important;
     border-radius: 14px !important;
-    margin-bottom: 18px !important;
+    margin-bottom: 0px !important;
     display: block !important;
     background: #fff;
   }
@@ -2214,7 +2249,7 @@ footer{
   margin-left: 150px;
 }
 .contact-map-container {
-  max-width: 1300px;
+  max-width: 1200px;
   margin: 0 auto;
   display: flex;
   gap: 64px;
@@ -2224,7 +2259,7 @@ footer{
 .contact-info {
   flex: 1 1 380px;
   min-width: 300px;
-  font-family: 'delmon', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-size: 21px;
 }
 .contact-info ul {
@@ -2232,17 +2267,17 @@ footer{
   padding: 0;
   font-size: 25px;
   color: #363636;
-  font-family: 'delmon', sans-serif;
+  font-family: 'Arial', sans-serif;
 }
 .contact-info ul li {
   margin-bottom: 16px;
-  font-family: 'delmon', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-size: 21px;
 }
 .contact-info a {
   color: #222;
   text-decoration: underline;
-  font-family: 'delmon', sans-serif;
+  font-family: 'Arial', sans-serif;
   font-size: 21px;
 }
 .map-embed {
@@ -2277,10 +2312,16 @@ footer{
   .contact-info {
     min-width: 0 !important;
     width: 96vw !important;
-    font-size: 1.5em !important;
+    font-size: 1.4em !important;
   }
   .contact-info ul {
-    font-size: 20px !important;
+    font-size: 18px !important;
+  }
+  .contact-info ul li {
+    font-size: 1em !important;
+  }
+  .contact-info a {
+    font-size: 1em !important;
   }
   .map-embed {
     min-width: 0 !important;
@@ -2327,7 +2368,7 @@ footer{
 
 .about-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: -30px auto 0;
   display: flex;
   align-items: center;
   gap: 64px;
@@ -2339,19 +2380,19 @@ footer{
   min-width: 300px;
   border-radius: 15px;
   background-color: #fff;
-  margin-top: -55px;   /* Move up slightly */
+  margin-top: -0px;
   margin-bottom: 0;
-  margin-left: -48px;  /* Move left slightly */
+  margin-left: -58px;
   padding-top: 0;
   padding-bottom: 0;
 }
 .about-text p {
-  font-size: 25px;
+  font-size: 24px;
   color: #504945;
   margin-bottom: 0;
   margin-top: 0;
   line-height: 1.6;
-  font-family: 'delmon', Arial, sans-serif;
+  font-family:  Arial, sans-serif;
 }
 
 .about-image {
@@ -2367,8 +2408,9 @@ footer{
 .about-image img {
   width: 100%;
   max-width: 420px;
-  height: 540px;
+  height: 400px; /* Decreased image height */
   object-fit: cover;
+  object-position: 50% 20%; /* Slightly move image upwards */
   border-radius: 10px;
   box-shadow: 0 4px 32px rgba(70,67,67,0.10);
   background: #FFF;
@@ -2390,6 +2432,7 @@ footer{
   .about-container {
     flex-direction: column;
     gap: 36px;
+   margin:0;
     padding: 0 16px;
   }
   .about-text {
@@ -2434,7 +2477,7 @@ footer{
   .about-title-below {
     font-size: 2.1em;
     margin-left: 20px;
-    margin-bottom: 0;
+    margin-bottom: 4px; /* Decreased margin to reduce gap */
     margin-top: 0;
     text-align: left;
   }
@@ -2446,11 +2489,11 @@ footer{
     padding: 0;
     border-radius: 8px;
     margin-top: 0;
-    margin-bottom: 0;
+    margin-bottom: 30px;
     padding-top: 0;
     padding-bottom: 0;
     min-height: 20px; /* Make the about text area smaller in height */
-    max-height: 330px; /* Restrict the height, can be adjusted as needed */
+    max-height: 210px; /* Restrict the height, can be adjusted as needed */
     overflow: hidden; /* Hide overflow if content exceeds the max-height */
   }
   .about-text p {
@@ -2493,4 +2536,6 @@ footer{
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
   border: 0;
+}
+
 }
