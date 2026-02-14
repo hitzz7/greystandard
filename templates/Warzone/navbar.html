@@ -5,10 +5,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>{% block title %} Grey Standard | Pet & Dog Grooming in Kathmandu {% endblock %}</title>
-    <meta name="description" content="{% block meta_description %}Find the best pet and dog grooming in Kathmandu at Grey Standard. Expert pet grooming services including dog grooming in Kathmandu, professional pet care, and premium pet salon. Book your appointment today!{% endblock %}">
+    <meta name="description" content="{% block meta_description %}Greystandard is a signature pet grooming founded in 2025, dedicated to enhancing each pet’s unique look through professional grooming and refined styling. Led by internationally trained groomer Vishwa Rai, we bring global grooming standards to Nepal with a strong focus on quality, comfort, and personalized care.{% endblock %}">
     <meta name="keywords" content="{% block meta_keywords %}Grey Standard, grey standard,pet, dog grooming in kathmandu, pet grooming kathmandu, dog grooming nepal, pet salon kathmandu, pet care kathmandu, dog grooming services, cat grooming kathmandu, pet spa kathmandu, professional pet grooming, best dog groomer kathmandu, pet haircut kathmandu {% endblock %}">
     <meta name="author" content="Grey Standard Pet Grooming">
     <link rel="canonical" href="{% block canonical_url %}https://greystandardktm.com/{% endblock %}" />
+    
     <link rel="shortcut icon" type="image/png" href="{% static 'grey1.png' %}" />
     <!-- Font Awesome for pet grooming icons and social media -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet" />
@@ -108,7 +109,7 @@
                 <a href="#contact" title="Contact Greystandard Pet Grooming Kathmandu">Contact</a>
             </li>
             <li class="nav-item">
-              <a href="#blog" title="Pet Grooming Tips and Advice Blog">Blog</a>
+              <a href="{% url 'store:blog_list' %}" title="Pet Grooming Tips and Advice Blog">Blog</a>
             </li>
         </ul>
 
@@ -122,6 +123,7 @@
               <li><a href="#petsupply" class="drawer-link" title="PetSupply">PetSupply</a></li>
               <li><a href="#about" class="drawer-link" title="About">About</a></li>
               <li><a href="#contact" class="drawer-link" title="Contact">Contact</a></li>
+              <li><a href="{% url 'store:blog_list' %}" class="drawer-link" title="Blog">Blog</a></li>
           </ul>
         </div>
         <!-- Semi-transparent backdrop overlay for drawer -->
@@ -177,7 +179,7 @@
               <li><a href="#price" title="Pet Grooming Prices Nepal">Price</a></li>
               <li><a href="#petsupply" title="Pet Supplies Nepal">PetSupply</a></li>
               <li><a href="#about" title="About Us Grey Standard">About</a></li>
-              <li><a href="#blog" title="Pet Blog Nepal">Blog</a></li>
+              <li><a href="{% url 'store:blog_list' %}" title="Pet Blog Nepal">Blog</a></li>
               <li><a href="#contact" title="Contact Pet Groomer Kathmandu">Contact</a></li>
             </ul>
           </nav>

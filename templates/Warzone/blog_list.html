@@ -1,13 +1,40 @@
 {% extends './navbar.html' %}
 {% load static %}
 
-{% block title %}Blog{% endblock %}
+{% block title %}Blog | Grey Standard Pet Grooming Kathmandu{% endblock %}
+
+{% block meta_description %}Read the Grey Standard blog for pet grooming tips, dog grooming advice, and stories from Nepal's best pet salon in Kathmandu. Expert care from certified groomer Vishwa Rai.{% endblock %}
+
+{% block canonical_url %}https://greystandardktm.com/blog/{% endblock %}
 
 {% block content %}
-
-<style>
-  
-</style>
-
-
+<main class="blog-list-page" role="main">
+  <div class="blog-list-container">
+    <h1 class="blog-title-main">Pet Grooming Blog – Tips &amp; Stories from Kathmandu</h1>
+    <p class="blog-intro">
+      At Grey Standard we share practical pet grooming advice, care tips, and updates from our salon in Kathmandu. 
+      From coat care and breed-specific styling to wellness and community events, find useful content for your pet’s care.
+    </p>
+    {% if blogs %}
+    <div class="blog-grid">
+      {% for blog in blogs %}
+      <article class="blog-card">
+        <div class="blog-card-image-wrapper">
+          <img class="blog-card-image" src="{{ blog.image.url }}" alt="Blog: {{ blog.title }}" loading="lazy" width="400" height="250">
+          <div class="blog-card-title-overlay">
+            {{ blog.title }}
+          </div>
+          <a class="blog-card-readmore-overlay" href="{% url 'store:blog_detail' blog.slug %}">Read More</a>
+        </div>
+        <div class="blog-card-content">
+          <p class="blog-card-desc">{{ blog.content|truncatewords:20|striptags }}</p>
+        </div>
+      </article>
+      {% endfor %}
+    </div>
+    {% else %}
+    <p class="blog-empty-message">No blog posts available yet. Check back soon for pet grooming tips and news from Grey Standard.</p>
+    {% endif %}
+  </div>
+</main>
 {% endblock %}

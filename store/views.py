@@ -8,7 +8,7 @@ from .models import Blog
 
 def blog_list(request):
     blogs = Blog.objects.all().order_by('-created_at')
-    return render(request, 'Warzone/home.html', {'blogs': blogs})
+    return render(request, 'Warzone/blog_list.html', {'blogs': blogs})
 
 def blog_detail(request, slug):
     blog = get_object_or_404(Blog, slug=slug)

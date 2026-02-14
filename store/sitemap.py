@@ -3,6 +3,7 @@ from django.urls import reverse
 from .models import Blog
 
 class StaticViewSitemap(Sitemap):
+    protocol = 'https'
     priority = 1.0
     changefreq = 'daily'
 
@@ -13,6 +14,7 @@ class StaticViewSitemap(Sitemap):
         return reverse(item)
 
 class BlogSitemap(Sitemap):
+    protocol = 'https'
     changefreq = "weekly"
     priority = 0.8
 
