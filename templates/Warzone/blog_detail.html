@@ -1,20 +1,20 @@
 {% extends './navbar.html' %}
 {% load static %}
 
-{% block title %}{{ blog.title }} | Pet & Dog Grooming Blog - Grey Standard Kathmandu{% endblock %}
+{% block title %}{{ blog.title }} | Grey Standard Kathmandu {% endblock %}
 
 {% block meta_description %}{{ blog.content|truncatewords:30|striptags }}{% endblock %}
 
 {% block meta_keywords %}pet grooming blog, dog grooming kathmandu, pet care blog, pet grooming tips, dog grooming advice, pet blog nepal, {{ blog.title|lower }}{% endblock %}
 
-{% block canonical_url %}https://www.greystandardktm.com{% url 'store:blog_detail' blog.slug %}{% endblock %}
+{% block canonical_url %}https://greystandardktm.com{% url 'store:blog_detail' blog.slug %}{% endblock %}
 
 {% block og_meta_tags %}
 <meta property="og:type" content="article" />
 <meta property="og:title" content="{{ blog.title }} | Grey Standard Pet Grooming Blog" />
 <meta property="og:description" content="{{ blog.content|truncatewords:30|striptags }}" />
-<meta property="og:url" content="https://www.greystandardktm.com{% url 'store:blog_detail' blog.slug %}" />
-<meta property="og:image" content="https://www.greystandardktm.com{{ blog.image.url }}" />
+<meta property="og:url" content="https://greystandardktm.com{% url 'store:blog_detail' blog.slug %}" />
+<meta property="og:image" content="https://greystandardktm.com{{ blog.image.url }}" />
 <meta property="og:site_name" content="Grey Standard Pet Grooming" />
 <meta property="article:published_time" content="{{ blog.created_at|date:'c' }}" />
 <meta property="article:author" content="Grey Standard Pet Grooming" />
@@ -25,7 +25,7 @@
 <meta name="twitter:card" content="summary_large_image" />
 <meta name="twitter:title" content="{{ blog.title }} | Grey Standard Pet Grooming Blog" />
 <meta name="twitter:description" content="{{ blog.content|truncatewords:30|striptags }}" />
-<meta name="twitter:image" content="https://www.greystandardktm.com{{ blog.image.url }}" />
+<meta name="twitter:image" content="https://greystandardktm.com{{ blog.image.url }}" />
 <meta name="twitter:site" content="@greystandardktm" />
 {% endblock %}
 
@@ -35,25 +35,25 @@
   "@context": "https://schema.org",
   "@type": "BlogPosting",
   "headline": "{{ blog.title|escapejs }}",
-  "image": "https://www.greystandardktm.com{{ blog.image.url }}",
+  "image": "https://greystandardktm.com{{ blog.image.url }}",
   "datePublished": "{{ blog.created_at|date:'c' }}",
   "dateModified": "{{ blog.created_at|date:'c' }}",
   "author": {
     "@type": "Organization",
     "name": "Grey Standard Pet Grooming",
-    "url": "https://www.greystandardktm.com"
+    "url": "https://greystandardktm.com"
   },
   "publisher": {
     "@type": "Organization",
     "name": "Grey Standard Pet Grooming",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://www.greystandardktm.com{% static 'grey1.png' %}"
+      "url": "https://greystandardktm.com{% static 'grey1.png' %}"
     }
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://www.greystandardktm.com{% url 'store:blog_detail' blog.slug %}"
+    "@id": "https://greystandardktm.com{% url 'store:blog_detail' blog.slug %}"
   },
   "articleBody": "{{ blog.content|striptags|truncatewords:500|escapejs }}",
   "description": "{{ blog.content|truncatewords:30|striptags|escapejs }}",
