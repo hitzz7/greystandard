@@ -1,7 +1,62 @@
 {% extends './navbar.html' %}
 {% load static %}
 
-{% block title %}Pet & Dog Grooming in Kathmandu | Grey Standard - Best Pet Salon Nepal{% endblock %}
+{% block title %}Grey Standard | Pet & Dog Grooming in Kathmandu {% endblock %}
+{% block meta_description %}Grey Standard is a signature pet grooming salon in Kathmandu founded in 2025. We enhance each pet’s unique look with professional grooming, gentle care, and globally certified skills by groomer Vishwa Rai.{% endblock %}
+{% block meta_keywords %}Pet grooming Kathmandu, dog grooming Nepal, pet salon, pet care Kathmandu, certified groomer, Grey Standard, Vishwa Rai, cat grooming, best pet grooming, premium pet salon, pet hygiene, pet supplies Nepal{% endblock %}
+{% block canonical_url %}https://greystandardktm.com/{% endblock %}
+{% block og_meta_tags %}
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Grey Standard | Pet & Dog Grooming in Kathmandu" />
+<meta property="og:description" content="Find the best pet and dog grooming in Kathmandu at Grey Standard. Expert pet grooming services and professional pet care. Book your appointment today!" />
+<meta property="og:url" content="https://greystandardktm.com/" />
+<meta property="og:image" content="https://greystandardktm.com/static/grey1.png" />
+<meta property="og:site_name" content="Grey Standard Pet Grooming" />
+{% endblock %}
+
+<!-- Twitter Card Meta Tags -->
+{% block twitter_meta_tags %}
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Grey Standard | Pet & Dog Grooming in Kathmandu" />
+<meta name="twitter:description" content="Find the best pet and dog grooming in Kathmandu at Grey Standard. Expert pet grooming services and professional pet care." />
+<meta name="twitter:image" content="https://greystandardktm.com/static/grey1.png" />
+<meta name="twitter:site" content="@greystandardktm" />
+{% endblock %}
+{% block extra_meta %}{% endblock %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PetStore",
+  "name": "Grey Standard Pet Grooming",
+  "alternateName": "Pet & Dog Grooming in Kathmandu",
+  "image": "https://greystandardktm.com/static/grey1.png",
+  "description": "Professional pet and dog grooming in Kathmandu. Expert pet grooming services including dog grooming in Kathmandu, pet care, and premium pet salon services in Nepal.",
+  "keywords": "pet, dog grooming in kathmandu, pet grooming kathmandu, dog grooming nepal",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Maharajgunj",
+    "addressLocality": "Kathmandu",
+    "addressRegion": "Bagmati",
+    "postalCode": "44600",
+    "addressCountry": "NP"
+  },
+  "telephone": "+977 9705428705",
+  "email": "info@greystandardktm.com",
+  "openingHours": "Sa-Su 09:00-19:00",
+  "priceRange": "$$",
+  "url": "https://greystandardktm.com/",
+  "sameAs": [
+    "https://www.instagram.com/greystandard/",
+    "https://www.tiktok.com/@grey13793"
+  ],
+  "areaServed": {
+    "@type": "City",
+    "name": "Kathmandu",
+    "addressCountry": "NP"
+  },
+  "serviceType": ["Pet Grooming", "Dog Grooming", "Pet Salon", "Pet Care"]
+}
+</script>
 
 {% block content %}
 <div class="bg-image">
