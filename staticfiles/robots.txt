@@ -3,5 +3,5 @@ Allow: /
 Disallow: /admin/
 Disallow: /staticfiles/
 
-Sitemap: https://godawarihotel.hitzz.co/sitemap.xml
+Sitemap: https://greystandardktm.com/sitemap.xml
 
