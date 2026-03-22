@@ -64,7 +64,7 @@
 <div class="bg-image">
   <img 
     src="{% static 'greystandardsignature.webp' %}" 
-    alt="Pet and Dog Grooming in Kathmandu - Grey Standard"
+    alt="Grey Standard"
     fetchpriority="high"
     loading="eager"
     decoding="async"
@@ -400,6 +400,76 @@
     </div>
   </div>
 </section>
+<style>
+  @media (max-width: 480px) {
+    #membership .pet-supply-container {
+      flex-direction: column !important;
+      gap: 16px !important;
+      align-items: flex-start !important;
+      padding: 0 8px;
+    }
+    #membership .pet-supply-text, 
+    #membership .pet-supply-image {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box;
+    }
+    #membership .pet-supply-image {
+      justify-content: center !important;
+      display: flex !important;
+      margin-top: 18px;
+    }
+    #membership .pet-supply-image img {
+      max-width: 100% !important;
+      height: auto !important;
+      min-width: 0 !important;
+      max-height: 380px !important;
+      margin-left: -160px !important;
+    }
+    #membership .pettitle {
+      
+      margin-bottom: 10px !important;
+    }
+    #membership ul {
+      font-size: 1em !important;
+      margin-left: 14px !important;
+    }
+    #membership p[style] {
+      font-size: 1.2em !important;
+      margin-bottom: 8px !important;
+    }
+    #membership .pet-supply-text {
+      padding-right: 0 !important;
+    }
+  }
+</style>
+<section id="membership" class="membership-section">
+  <h2 class="pettitle" style="margin-bottom: -30px;">Membership</h2>
+  <div class="pet-supply-container" style="display: flex; align-items: center; gap: 30px;">
+    <!-- Left: Text Content -->
+    <div class="pet-supply-text">
+      <p>
+        Become a Gold Member at Grey Standard and unlock amazing benefits for your pet! Membership includes exclusive discounts on grooming services, priority booking, and special treats. Give your furry friend the best care with extra perks and attention.
+      </p>
+      <p style="margin-top: 0; margin-bottom: 10px; font-size: 1.55em; color:#333"><strong>Gold Members get 15% discount on</strong></p>
+      <ul style="margin: 12px 0 16px 18px; padding: 0; font-size: 1.15em; font-weight: bold;">
+        <li>Basic groom package</li>
+        <li>Full groom package</li>
+        <li>Pet supplies</li>
+      </ul>
+      <p style="font-weight: bold; color: #c09b3c; margin-bottom: 12px;">
+        Membership fee: Rs 5,000 per year
+      </p>
+    </div>
+    <!-- Right: Image -->
+    <div class="pet-supply-image" style="display: flex; justify-content: flex-end;">
+      <img src="{% static 'gold.jpg' %}" alt="Gold Membership Grey Standard" style="max-width: 540px; width: 100%; height: 600px; border-radius: 12px;">
+    </div>
+  </div>
+</section>
+
+
+
             
 <div id="blog" class="blog-list-container">
   <h2 class="blog-title-main">Blog</h2>
