@@ -2198,8 +2198,8 @@ footer{
   }
 
   .pettitle {
-    font-size: 40px;
-    margin-left: 8px;
+    font-size: 35px;
+    margin-left:28px;
     margin-bottom: 12px;
     text-align: left;
   }
@@ -2222,6 +2222,7 @@ footer{
   .pet-supply-container {
     padding: 0 3vw;
     gap: 0px;
+    margin-left: 15px;
   }
 }
 
@@ -2232,8 +2233,9 @@ footer{
     flex: 1 1 100% !important;
   }
   .pet-supply-text h2 {
-    margin-left: 0 !important;
+    
     font-size: 2.1rem !important;
+    margin-left: 15px !important;
     margin-bottom: 14px !important;
     text-align: left !important;
   }
